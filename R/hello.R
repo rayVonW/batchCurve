@@ -23,7 +23,7 @@ hello <- function() {
   print("Hello, world!")
 }
 
-#' Title
+#' tests functions in other scripts
 #'
 #' @param c
 #' @param d

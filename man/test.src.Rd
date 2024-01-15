@@ -2,7 +2,7 @@
 % Please edit documentation in R/hello.R
 \name{test.src}
 \alias{test.src}
-\title{Title}
+\title{tests functions in other scripts}
 \usage{
 test.src(c, d)
 }
@@ -10,7 +10,7 @@ test.src(c, d)
 \item{d}{}
 }
 \description{
-Title
+tests functions in other scripts
 }
 \examples{
 test.src(1+1)
