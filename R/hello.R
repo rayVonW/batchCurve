@@ -25,16 +25,17 @@ hello <- function() {
 
 #' tests functions in other scripts
 #'
-#' @param c
-#' @param d
+#' @param c A number.
+#' @param d A number.
 #'
 #' @return
 #' @export
 #'
-#' @examples test.src(1+1)
+#' @examples
+#' test.src(1,1)
 #'
 #'
 test.src <- function(c, d) {
-  test.fun(c,d)
+  test.fun(c, d)
 
 }

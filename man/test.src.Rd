@@ -7,13 +7,15 @@
 test.src(c, d)
 }
 \arguments{
-\item{d}{}
+\item{c}{A number.}
+
+\item{d}{A number.}
 }
 \description{
 tests functions in other scripts
 }
 \examples{
-test.src(1+1)
+test.src(1,1)
 
 
 }

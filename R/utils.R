@@ -2,8 +2,8 @@
 
 #' embedded utility function
 #'
-#' @param a a number
-#' @param b a number
+#' @param a a number.
+#' @param b a number.
 #'
 #' @return
 #' @noRd
