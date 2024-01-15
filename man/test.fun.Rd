@@ -2,13 +2,18 @@
 % Please edit documentation in R/utils.R
 \name{test.fun}
 \alias{test.fun}
-\title{Title}
+\title{embedded utility function}
 \usage{
 test.fun(a, b)
 }
 \arguments{
-\item{b}{}
+\item{a}{a number}
+
+\item{b}{a number}
 }
 \description{
-Title
+embedded utility function
+}
+\examples{
+test.fun(1+1)
 }

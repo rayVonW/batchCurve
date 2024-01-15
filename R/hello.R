@@ -32,6 +32,8 @@ hello <- function() {
 #' @export
 #'
 #' @examples
+#'
+#'
 test.src <- function(c, d) {
   test.fun(c,d)
 
