@@ -6,7 +6,7 @@
 #' @param b a number
 #'
 #' @return
-#'
+#' @noRd
 #' @examples test.fun(1+1)
 test.fun <- function(a,b) {
 
