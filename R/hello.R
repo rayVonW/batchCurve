@@ -31,7 +31,7 @@ hello <- function() {
 #' @return
 #' @export
 #'
-#' @examples
+#' @examples test.src(1+1)
 #'
 #'
 test.src <- function(c, d) {

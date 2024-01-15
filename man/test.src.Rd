@@ -12,3 +12,8 @@ test.src(c, d)
 \description{
 Title
 }
+\examples{
+test.src(1+1)
+
+
+}
