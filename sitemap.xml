@@ -10,12 +10,36 @@
     <loc>https://rayvonw.github.io/gamma/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/hello.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/check_raw_files.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/fit.LL4.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/gamma-package.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/get_assay_data.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/get_locations.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/import_plate.html</loc>
   </url>
   <url>
     <loc>https://rayvonw.github.io/gamma/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/test.src.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/read_csv_file.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/retrieve_results.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/run.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/reference/validate_meta.html</loc>
   </url>
 </urlset>
