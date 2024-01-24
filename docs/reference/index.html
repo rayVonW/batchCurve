@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">gamma</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,25 +53,55 @@
 
       <dl><dt>
           
-          <code><a href="hello.html">hello()</a></code> 
+          <code><a href="check_raw_files.html">check_raw_files()</a></code> 
         </dt>
-        <dd>Hello, World!</dd>
+        <dd>Checks for the existence of raw plate reader files, prefixed with either 'TRno' or 'automated'</dd>
       </dl><dl><dt>
           
-          <code><a href="test.fun.html">test.fun()</a></code> 
+          <code><a href="fit.LL4.html">fit.LL4()</a></code> 
         </dt>
-        <dd>Title</dd>
+        <dd>drc fitting function</dd>
       </dl><dl><dt>
           
-          <code><a href="test.src.html">test.src()</a></code> 
+          <code><a href="get_assay_data.html">get_assay_data()</a></code> 
         </dt>
-        <dd>Title</dd>
+        <dd>subsets plate data per assay, converts values to percentages then adds the dose curve</dd>
+      </dl><dl><dt>
+          
+          <code><a href="get_locations.html">get_locations()</a></code> 
+        </dt>
+        <dd>finds drug assay data on a 96 or 384 well plate</dd>
+      </dl><dl><dt>
+          
+          <code><a href="import_plate.html">import_plate()</a></code> 
+        </dt>
+        <dd>checks raw data files</dd>
+      </dl><dl><dt>
+          
+          <code><a href="read_csv_file.html">read_csv_file()</a></code> 
+        </dt>
+        <dd>reads in csv of meta data for drug assays</dd>
+      </dl><dl><dt>
+          
+          <code><a href="retrieve_results.html">retrieve_results()</a></code> 
+        </dt>
+        <dd>adds model coefficients to data</dd>
+      </dl><dl><dt>
+          
+          <code><a href="run.html">run()</a></code> 
+        </dt>
+        <dd>iterates over assays for IC50 estimation</dd>
+      </dl><dl><dt>
+          
+          <code><a href="validate_meta.html">validate_meta()</a></code> 
+        </dt>
+        <dd>validates the meta file for assays and summarise contents</dd>
       </dl></div>
   </main></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by The package maintainer.</p>
+  <p></p><p>Developed by Ray Coyle.</p>
 </div>
 
 <div class="pkgdown-footer-right">
