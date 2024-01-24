@@ -7,7 +7,12 @@
 import_plate(file, meta)
 }
 \arguments{
-\item{meta}{}
+\item{file}{List of raw data files matching prefix}
+
+\item{meta}{The meta dataframe.}
+}
+\value{
+A list of dataframes of raw data for each file/plate
 }
 \description{
 checks raw data files

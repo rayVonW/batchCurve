@@ -7,10 +7,10 @@
 check_raw_files(file_path)
 }
 \arguments{
-\item{file_path}{}
+\item{file_path}{A path to the directory where raw data is stored with  meta file}
 }
 \value{
-A list of raw files for analysis
+A list of raw files for analysis.
 }
 \description{
 Checks for the existence of raw plate reader files, prefixed with either 'TRno' or 'automated'

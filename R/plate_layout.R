@@ -2,13 +2,11 @@
 
 #' finds drug assay data on a 96 or 384 well plate
 #'
-#' @param assay
-#' @param plate
+#' @param assay A dataframe of a single meta entry
+#' @param plate A dataframe of plate reader measurements
 #'
-#' @return
+#' @return A dataframe of plate position coordinates and control values
 #' @export
-#'
-#' @examples
 get_locations <- function(assay, plate){
   #The four formats are stored in sysdata.rda and are lazy loaded:
   #triplicate_384, triplicate_96, duplicate_384, duplicate_96
@@ -19,43 +17,47 @@ get_locations <- function(assay, plate){
   if (assay$format == '384w') {
 
     if (assay$replicates == 3) {
-      locate <- filter(triplicate_384, position_name == assay$position_id)
+      locate <- triplicate_384 %>%
+        dplyr::filter(.data$position_name == assay$position_id)
     }
     if (assay$replicates == 2) {
-      locate <- filter(duplicate_384, position_name == assay$position_id)
+      locate <- duplicate_384 %>%
+        dplyr::filter(.data$position_name == assay$position_id)
     }
     locate$blank <-
       mean(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 13])))
     locate$blank_sd <-
-      sd(as.numeric(
+      stats::sd(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 13])))
     locate$no_drug <-
       mean(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 12])))
     locate$no_drug_sd <-
-      sd(as.numeric(
+      stats::sd(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 12])))
   }
 
   if (assay$format == '96w') {
     if (assay$replicates == 3) {
-      locate <- filter(triplicate_96, position_name == assay$position_id)
+      locate <- triplicate_96 %>%
+        dplyr::filter(.data$position_name == assay$position_id)
     }
     if (assay$replicates == 2) {
-      locate <- filter(duplicate_96, position_name == assay$position_id)
+      locate <- duplicate_96 %>%
+        dplyr::filter(.data$position_name == assay$position_id)
     }
     locate$blank <-
       mean(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 12])))
     locate$blank_sd <-
-      sd(as.numeric(
+      stats::sd(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 12])))
     locate$no_drug <-
       mean(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 11])))
     locate$no_drug_sd <-
-      sd(as.numeric(
+      stats::sd(as.numeric(
         as.character(plate[locate$set_rows_t:locate$set_rows_b, 11])))
   }
 
@@ -65,14 +67,13 @@ get_locations <- function(assay, plate){
 
 #' subsets plate data per assay, converts values to percentages then adds the dose curve
 #'
-#' @param data
-#' @param location
-#' @param assays_info
+#' @param data A dataframe of measurement values per
+#' @param location A dataframe of position coordinates
+#' @param assays_info A dataframe of meta data
 #'
-#' @return
+#' @return A dataframe of normalised values for a dose-response assay
 #' @export
 #'
-#' @examples
 get_assay_data <- function(data, location, assays_info){
   #retrieve assay specific data
   data_set <- as.data.frame(t(data[location$set_rows_t:location$set_rows_b,
@@ -81,7 +82,7 @@ get_assay_data <- function(data, location, assays_info){
   #add no drug and blank data
   data_set[nrow(data_set) + 1,] = c( rep(location$no_drug,assays_info$replicates))
   data_set[] <- lapply(data_set, function(x) as.numeric(as.character(x)))
-  data_set_blank <- data_set %>% mutate_all(.funs = list(~. - location$blank))
+  data_set_blank <- data_set %>% dplyr::mutate_all(.funs = list(~. - location$blank))
 
   #Create percentage dataframe
 
@@ -111,7 +112,11 @@ get_assay_data <- function(data, location, assays_info){
   }
 
   #convert to long format
-  data_pct  <- reshape2::melt(data_pct , id.vars = "dose")
+  #data_pct  <- reshape2::melt(data_pct , id.vars = "dose")
+  data_pct  <- data_pct %>% tidyr::pivot_longer(!dose,
+                                               names_to = "replicate",
+                                               values_to = "value")
+
 
   data_pct$value <- ifelse(data_pct$value > 100, 100, data_pct$value)
   data_pct$value <- ifelse(data_pct$value < 0, 0, data_pct$value)

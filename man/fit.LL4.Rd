@@ -7,7 +7,12 @@
 fit.LL4(data, assay)
 }
 \arguments{
-\item{assay}{}
+\item{data}{Normalised measurements from a drug assay.}
+
+\item{assay}{Assay meta data.}
+}
+\value{
+An LL4 fitted model
 }
 \description{
 drc fitting function

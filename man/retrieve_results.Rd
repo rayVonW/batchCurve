@@ -7,7 +7,12 @@
 retrieve_results(model, assays)
 }
 \arguments{
-\item{assays}{}
+\item{model}{LL4 model fitted to the data.}
+
+\item{assays}{Assay meta data}
+}
+\value{
+Assay meta dataframe with LL4 coefficiants appended
 }
 \description{
 adds model coefficients to data

@@ -1,24 +1,20 @@
-library(readr)
-library(cli)
-library(tidyverse)
+
 
 
 #' reads in csv of meta data for drug assays
 #'
-#' @param file_path
+#' @param file_path A path and name of the meta file for analysis.
 #'
-#' @return A dataframe
+#' @return A dataframe of user supplied assay meta data.
 #' @export
-#'
-#' @examples
 read_csv_file <- function(file_path) {
   abort_not_found(file_path)
 
-  df <-  try(read.csv(file = file_path,
+  df <-  try(utils::read.csv(file = file_path,
                     header = T,
                     check.names = F)) %>%
-    mutate_if(is.character, str_trim) %>%
-    na.omit()
+    dplyr::mutate_if(is.character, stringr::str_trim) %>%
+    stats::na.omit()
 
   return(df)
 }
@@ -27,7 +23,7 @@ read_csv_file <- function(file_path) {
 #'
 #' @param df from the user csv file
 #'
-#' @return a dataframe
+#' @return A dataframe of user supplied assay meta data.
 #' @export
 #'
 validate_meta <- function(df) {
@@ -45,18 +41,18 @@ validate_meta <- function(df) {
 
   colnames(df) <- nms
   df$plate_id <- gsub("-","_", df$plate_id)
-  df$IC50_key <- stri_rand_strings(nrow(df), 14)
+  df$IC50_key <- stringi::stri_rand_strings(nrow(df), 14)
   check_if_not_numeric(df$starting_uM)
   check_if_not_numeric(df$dilution_factor)
-  n <- df %>% group_by(plate_id, position_id) %>%
+  n <- df %>% dplyr::group_by(.data$plate_id, .data$position_id) %>%
     dplyr::filter(n() > 1)
   if (dim(n)[1] > 0) {
     cli::cli_abort(c('duplicate positions used on same plate:',
                      "i" = "check meta file"
     ))
   }
-  z <- df %>% dplyr::select(plate_id, compound, cell) %>%
-    summarise_all(n_distinct)
+  z <- df %>% dplyr::select(.data$plate_id, .data$compound, .data$cell) %>%
+    dplyr::summarise_all(dplyr::n_distinct)
   cli::cli_inform(c(
     "v" = "Meta csv read successfully",
     "i" = "It contains {length(df$plate_id)} assay{?s}.",
@@ -69,14 +65,10 @@ validate_meta <- function(df) {
 
 #' Checks for the existence of raw plate reader files, prefixed with either 'TRno' or 'automated'
 #'
-#' @param file_path
-#'
+#' @param file_path A path to the directory where raw data is stored with  meta file
 #' @export
-#' @return A list of raw files for analysis
-#' @examples
+#' @return A list of raw files for analysis.
 check_raw_files <- function(file_path) {
-
-
   file.names <- dir(dirname(file_path),
                     pattern = "TRno|automated",
                     full.names = T)
@@ -96,27 +88,25 @@ check_raw_files <- function(file_path) {
 
 #' checks raw data files
 #'
-#' @param file
-#' @param meta
+#' @param file List of raw data files matching prefix
+#' @param meta The meta dataframe.
 #'
-#' @return
+#' @return A list of dataframes of raw data for each file/plate
 #' @export
-#'
-#' @examples
 import_plate <-  function(file, meta) {
   j <- 1
   plates <- list()
   for (i in file) {
 
     abort_not_found(i)
-    data <- as.data.frame(read.csv(i,
+    data <- as.data.frame(utils::read.csv(i,
                                    sep = ",",
                                    header = FALSE,
                                    skip = 10,
                                    stringsAsFactors = FALSE,
                                    blank.lines.skip = FALSE))
 
-    tag <- as.data.frame(read.csv(i,
+    tag <- as.data.frame(utils::read.csv(i,
                                   sep = ",",
                                   header = FALSE,
                                   nrows = 3,

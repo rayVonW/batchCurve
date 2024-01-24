@@ -7,7 +7,14 @@
 get_assay_data(data, location, assays_info)
 }
 \arguments{
-\item{assays_info}{}
+\item{data}{A dataframe of measurement values per}
+
+\item{location}{A dataframe of position coordinates}
+
+\item{assays_info}{A dataframe of meta data}
+}
+\value{
+A dataframe of normalised values for a dose-response assay
 }
 \description{
 subsets plate data per assay, converts values to percentages then adds the dose curve

@@ -1,10 +1,10 @@
 
 #' Checks if numeric
 #'
-#' @param x
-#'
-#' @export
-#' @examples
+#' @param x object
+#' @param arg variable name.
+#' @param call environment.
+#' @noRd
 check_if_not_numeric <- function(x,
                                  arg = rlang::caller_arg(x),
                                  call = rlang::caller_env()) {
@@ -21,10 +21,9 @@ check_if_not_numeric <- function(x,
 
 #' Check if file exists and is not empty
 #'
-#' @param x
-#'
-#' @export
-#' @examples
+#' @param x variable name.
+#' @param call environment.
+#' @noRd
 abort_not_found <- function(x,
                             call = rlang::caller_env()) {
 
@@ -45,15 +44,11 @@ abort_not_found <- function(x,
 
 #' checks arguments types
 #'
-#' @param arg
-#' @param must
-#' @param not
-#' @param call
-#'
-#' @return
-#' @export
-#'
-#' @examples
+#' @param arg variable name.
+#' @param must required type.
+#' @param not object.
+#' @param call environment.
+#' @noRd
 abort_bad_argument <- function(arg, must, not = NULL,
                                call = rlang::caller_env()) {
 

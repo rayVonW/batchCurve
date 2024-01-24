@@ -7,10 +7,10 @@
 read_csv_file(file_path)
 }
 \arguments{
-\item{file_path}{}
+\item{file_path}{A path and name of the meta file for analysis.}
 }
 \value{
-A dataframe
+A dataframe of user supplied assay meta data.
 }
 \description{
 reads in csv of meta data for drug assays

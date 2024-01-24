@@ -7,7 +7,12 @@
 get_locations(assay, plate)
 }
 \arguments{
-\item{plate}{}
+\item{assay}{A dataframe of a single meta entry}
+
+\item{plate}{A dataframe of plate reader measurements}
+}
+\value{
+A dataframe of plate position coordinates and control values
 }
 \description{
 finds drug assay data on a 96 or 384 well plate

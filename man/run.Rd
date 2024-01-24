@@ -11,6 +11,9 @@ run(file_path, batch_id)
 
 \item{batch_id}{A unique character value to identify the batch}
 }
+\value{
+A dataframe of LL4 model coefficiants for dose-response assays
+}
 \description{
 iterates over assays for IC50 estimation
 }

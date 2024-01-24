@@ -4,9 +4,9 @@
 \name{gamma-package}
 \alias{gamma}
 \alias{gamma-package}
-\title{gamma: What the Package Does (Title Case)}
+\title{gamma: Provides batch analysis for dose-response modelling}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+A tailored package to analyse raw dose-response data and corresponding meta data.
 }
 \seealso{
 Useful links:
