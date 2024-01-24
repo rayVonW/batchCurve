@@ -94,6 +94,15 @@ check_raw_files <- function(file_path) {
 }
 
 
+#' checks raw data files
+#'
+#' @param file
+#' @param meta
+#'
+#' @return
+#' @export
+#'
+#' @examples
 import_plate <-  function(file, meta) {
   j <- 1
   plates <- list()

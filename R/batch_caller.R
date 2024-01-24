@@ -20,7 +20,7 @@ run <- function(file_path, batch_id){
   results_all <- data.frame(matrix(ncol = 21, nrow = 0))
   curves_all <- data.frame(matrix(ncol = 8, nrow = 0))
   data_all <- data.frame(matrix(ncol = 8, nrow = 0))
-  c<-1
+  c <- 1
 
   for (i in 1:length(d)) {
     #process per plate/file
@@ -28,8 +28,15 @@ run <- function(file_path, batch_id){
     plate_assays$file_name <- d[[i]][[4]]
     plate_assays$date <- format(as.Date(d[[1]][[3]], format = "%d/%m/%Y"))
     plate <- as.data.frame(d[[1]][[1]])
-    for (j in 1:nrow(plate_assays)){
-      locate <- get_locations(plate_assays[j,], plate$data)
+    for (j in 1:nrow(plate_assays)) {
+      # get location coordinates per assay
+      locate <- get_locations(plate_assays[j,], plate)
+      # retrieve data from plate per assay
+      data <- get_assay_data(plate, locate, plate_assays[j,])
+      # fit model
+      m <- fit.LL4(data, plate_assays[j,])
+      #model_results <- retrieve_results(m, plate_assays[j,] )
+      return(data)
     }
   }
 }

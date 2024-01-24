@@ -113,6 +113,9 @@ get_assay_data <- function(data, location, assays_info){
   #convert to long format
   data_pct  <- reshape2::melt(data_pct , id.vars = "dose")
 
+  data_pct$value <- ifelse(data_pct$value > 100, 100, data_pct$value)
+  data_pct$value <- ifelse(data_pct$value < 0, 0, data_pct$value)
+
   return(data_pct)
 
 }
