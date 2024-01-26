@@ -15,7 +15,13 @@ get_locations <- function(assay, plate){
   locate <- NULL
 
   if (assay$format == '384w') {
-
+    if (!assay$position_id %in% c('pos_1','pos_2','pos_3','pos_4',
+                                       'pos_5','pos_6','pos_7','pos_8',
+                                       'pos_9','pos_10')) {
+      cli::cli_abort(c(
+                     'x' = 'Position ids format fail. ',
+                     'i' = 'Expected pattern: pos_[1:10].'))
+    }
     if (assay$replicates == 3) {
       locate <- triplicate_384 %>%
         dplyr::filter(.data$position_name == assay$position_id)
@@ -40,10 +46,18 @@ get_locations <- function(assay, plate){
 
   if (assay$format == '96w') {
     if (assay$replicates == 3) {
+      if (!assay$position_id %in% c('pos_1','pos_2')) {
+        cli::cli_abort(c('x' = 'Position ids format fail. ',
+                       'i' = 'Expected pattern: pos_[1:2].'))
+      }
       locate <- triplicate_96 %>%
         dplyr::filter(.data$position_name == assay$position_id)
     }
     if (assay$replicates == 2) {
+      if (!assay$position_id %in% c('pos_1','pos_2', 'pos_3')) {
+        cli::cli_abort(c('x' = 'Position ids format fail. ',
+                       'i' = 'Expected pattern: pos_[1:3].'))
+      }
       locate <- duplicate_96 %>%
         dplyr::filter(.data$position_name == assay$position_id)
     }
@@ -105,10 +119,10 @@ get_assay_data <- function(data, location, assays_info){
 
   #rename columns
   if (ncol(data_pct ) == 3){
-    colnames(data_pct ) <- c("dose", "R1", "R2")
+    colnames(data_pct ) <- c("dose", "replicate_1", "replicate_2")
   }
   else {
-    colnames(data_pct ) <- c("dose", "R1", "R2", "R3")
+    colnames(data_pct ) <- c("dose", "replicate_1", "replicate_2", "replicate_3")
   }
 
   #convert to long format

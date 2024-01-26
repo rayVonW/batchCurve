@@ -24,4 +24,11 @@ Imports:
     stats,
     stringr,
     utils,
-    rlang
+    rlang,
+    ggplot2,
+    gridExtra,
+    scales
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

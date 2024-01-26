@@ -4,15 +4,17 @@
 \alias{retrieve_results}
 \title{adds model coefficients to data}
 \usage{
-retrieve_results(model, assays)
+retrieve_results(model, assays, locate)
 }
 \arguments{
-\item{model}{LL4 model fitted to the data.}
+\item{model}{An LL4 model fitted to the data.}
 
-\item{assays}{Assay meta data}
+\item{assays}{A data frame of assay meta data.}
+
+\item{locate}{A data frame of coordinates.}
 }
 \value{
-Assay meta dataframe with LL4 coefficiants appended
+Assay meta data frame with LL4 coefficients appended
 }
 \description{
 adds model coefficients to data

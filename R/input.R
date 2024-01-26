@@ -8,7 +8,17 @@
 #' @return A dataframe of user supplied assay meta data.
 #' @export
 read_csv_file <- function(file_path) {
-  abort_not_found(file_path)
+
+  if (!file.exists(file_path)) {
+    cli::cli_alert(c('File not found.',
+                     "x" = "`{file_path}` does not exist",
+                     "i" = "Try checking file paths or name"))
+  }
+
+  if (file.size(file_path) < 200) {
+    cli::cli_alert(c('Can not read empty files.',
+                     "i" = "`{file_path}` is empty"))
+  }
 
   df <-  try(utils::read.csv(file = file_path,
                     header = T,
@@ -21,9 +31,9 @@ read_csv_file <- function(file_path) {
 
 #' validates the meta file for assays and summarise contents
 #'
-#' @param df from the user csv file
+#' @param df A data frame of user supplied meta csv data.
 #'
-#' @return A dataframe of user supplied assay meta data.
+#' @return A data frame of user supplied assay meta data.
 #' @export
 #'
 validate_meta <- function(df) {
@@ -41,11 +51,15 @@ validate_meta <- function(df) {
 
   colnames(df) <- nms
   df$plate_id <- gsub("-","_", df$plate_id)
-  df$IC50_key <- stringi::stri_rand_strings(nrow(df), 14)
+  #generate a unique ID tag for each assay
+  df <- df %>% dplyr::mutate(IC50_key = stringi::stri_rand_strings(nrow(df),
+                                                             14),
+                       .before = .data$plate_id)
+
   check_if_not_numeric(df$starting_uM)
   check_if_not_numeric(df$dilution_factor)
   n <- df %>% dplyr::group_by(.data$plate_id, .data$position_id) %>%
-    dplyr::filter(n() > 1)
+    dplyr::filter(dplyr::n() > 1)
   if (dim(n)[1] > 0) {
     cli::cli_abort(c('duplicate positions used on same plate:',
                      "i" = "check meta file"
@@ -91,14 +105,26 @@ check_raw_files <- function(file_path) {
 #' @param file List of raw data files matching prefix
 #' @param meta The meta dataframe.
 #'
-#' @return A list of dataframes of raw data for each file/plate
+#' @return A list of plate data: 1. raw data, 2. plate ID, 3.date 4. filename
 #' @export
 import_plate <-  function(file, meta) {
   j <- 1
   plates <- list()
   for (i in file) {
 
-    abort_not_found(i)
+    if (!file.exists(i)) {
+      cli::cli_inform(c("x" = "{basename(i)} does not exist",
+                        "i" = "Skipping File."
+      ))
+      next
+    }
+
+    if (file.size(i) < 200) {
+      cli::cli_inform(c("x" = "{basename(i)} is empty",
+                       "i" = "Skipping file."
+      ))
+      next
+    }
     data <- as.data.frame(utils::read.csv(i,
                                    sep = ",",
                                    header = FALSE,
@@ -113,17 +139,16 @@ import_plate <-  function(file, meta) {
                                   stringsAsFactors = FALSE))[3,1]
 
     if (nchar(tag) < 5) {
-      cli::cli_alert(c('Plate ID not found.',
-                       "x" = "Raw data missing ID in A3",
-                       "i" = "check file format"))
+
+      cli::cli_inform(c("x" = "Plate ID missing from A3 {basename(i)}",
+                      "i" = "Skipping file."))
       next
     }
     id <- gsub(" ","", strsplit(tag, " ")[[1]][2], fixed = TRUE)
     id <- gsub("-","_", id)
     if (!any(id == meta$plate_id)  ) {
-      cli::cli_alert(c('Plate ID does not match meta data.',
-                       "x" = "ID: {id} not known",
-                       "i" = "check file format"))
+      cli::cli_inform(c("x" = "ID: {id} from {basename(i)} not in meta file",
+                        "i" = "Skipping file."))
       next
     }
 

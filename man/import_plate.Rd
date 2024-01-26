@@ -12,7 +12,7 @@ import_plate(file, meta)
 \item{meta}{The meta dataframe.}
 }
 \value{
-A list of dataframes of raw data for each file/plate
+A list of plate data: 1. raw data, 2. plate ID, 3.date 4. filename
 }
 \description{
 checks raw data files

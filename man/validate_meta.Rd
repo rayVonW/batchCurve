@@ -7,10 +7,10 @@
 validate_meta(df)
 }
 \arguments{
-\item{df}{from the user csv file}
+\item{df}{A data frame of user supplied meta csv data.}
 }
 \value{
-A dataframe of user supplied assay meta data.
+A data frame of user supplied assay meta data.
 }
 \description{
 validates the meta file for assays and summarise contents

@@ -7,6 +7,7 @@
 #' @importFrom cli cli_inform
 #' @importFrom dplyr filter
 #' @importFrom dplyr mutate_all
+#' @importFrom dplyr n
 #' @importFrom dplyr select
 #' @importFrom dplyr summarise_all
 #' @importFrom drc drm
@@ -22,10 +23,12 @@
 #' @importFrom stats setNames
 #' @importFrom stringi stri_rand_strings
 #' @importFrom stringr str_trim
+#' @importFrom tidyr pivot_wider
 #' @importFrom utils globalVariables
 #' @importFrom utils lsf.str
 #' @importFrom utils packageVersion
 #' @importFrom utils read.csv
+#' @importFrom utils write.csv
 ## usethis namespace: end
 NULL
 

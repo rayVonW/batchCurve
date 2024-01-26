@@ -4,15 +4,13 @@
 \alias{fit.LL4}
 \title{drc fitting function}
 \usage{
-fit.LL4(data, assay)
+fit.LL4(data)
 }
 \arguments{
 \item{data}{Normalised measurements from a drug assay.}
-
-\item{assay}{Assay meta data.}
 }
 \value{
-An LL4 fitted model
+An LL4 fitted model or error to handle
 }
 \description{
 drc fitting function

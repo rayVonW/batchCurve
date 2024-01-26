@@ -19,28 +19,7 @@ check_if_not_numeric <- function(x,
 
 }
 
-#' Check if file exists and is not empty
-#'
-#' @param x variable name.
-#' @param call environment.
-#' @noRd
-abort_not_found <- function(x,
-                            call = rlang::caller_env()) {
 
-  if (!file.exists(x)) {
-    cli::cli_abort(c('File not found.',
-                     "x" = "`{x}` does not exist",
-                     "i" = "Try checking file paths or name"
-    ), call = call)
-  }
-
-  if (file.size(x) < 3) {
-    cli::cli_abort(c('Can not read empty files.',
-                     "x" = "`{x}` is empty"
-    ), call = call)
-  }
-
-}
 
 #' checks arguments types
 #'
