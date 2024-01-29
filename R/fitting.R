@@ -5,7 +5,7 @@
 #' @param data Normalised measurements from a drug assay.
 #'
 #' @return An LL4 fitted model or error to handle
-#' @export
+#' @noRd
 fit.LL4 <- function(data) {
   # control arguments
   control <- drc::drmc(errorm = T,noMessage = TRUE, warnVal = -1)
@@ -19,7 +19,7 @@ fit.LL4 <- function(data) {
                                             "min",
                                             "max",
                                             "IC50")),
-                  na.action = na.omit,
+                  na.action = stats::na.omit,
                   control = control),
 
     error = function(e) e,
@@ -36,7 +36,7 @@ fit.LL4 <- function(data) {
 #' @param locate A data frame of coordinates.
 #'
 #' @return Assay meta data frame with LL4 coefficients appended
-#' @export
+#' @noRd
 retrieve_results <- function(model, assays, locate){
 
   coefs <- model$coefficients
@@ -75,7 +75,7 @@ retrieve_results <- function(model, assays, locate){
 #' @param data A data frame of model coefficients and drug assay data.
 #'
 #' @return A data frame of predicted values using the model and dose range.
-#' @export
+#' @noRd
 generate_curve <- function(data){
   #filter out NA where n = 2 or failed fit
   data <- data[stats::complete.cases(data),]

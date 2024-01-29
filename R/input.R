@@ -6,24 +6,23 @@
 #' @param file_path A path and name of the meta file for analysis.
 #'
 #' @return A dataframe of user supplied assay meta data.
-#' @export
+#' @noRd
 read_csv_file <- function(file_path) {
 
   if (!file.exists(file_path)) {
-    cli::cli_alert(c('File not found.',
+    cli::cli_abort(c('File not found.',
                      "x" = "`{file_path}` does not exist",
                      "i" = "Try checking file paths or name"))
   }
 
   if (file.size(file_path) < 200) {
-    cli::cli_alert(c('Can not read empty files.',
+    cli::cli_abort(c('Can not read empty files.',
                      "i" = "`{file_path}` is empty"))
   }
 
   df <-  try(utils::read.csv(file = file_path,
                     header = T,
                     check.names = F)) %>%
-    dplyr::mutate_if(is.character, stringr::str_trim) %>%
     stats::na.omit()
 
   return(df)
@@ -34,13 +33,15 @@ read_csv_file <- function(file_path) {
 #' @param df A data frame of user supplied meta csv data.
 #'
 #' @return A data frame of user supplied assay meta data.
-#' @export
+#' @noRd
 #'
 validate_meta <- function(df) {
   nms <- c('plate_id','position_id',
            'format',	'replicates',
            'index',	'compound','cell',
            'starting_uM','dilution_factor')
+
+
 
   if (!length(colnames(df)) == 9) {
     cli::cli_abort(c('Error: Expected 9 meta data columns:',
@@ -56,8 +57,16 @@ validate_meta <- function(df) {
                                                              14),
                        .before = .data$plate_id)
 
-  check_if_not_numeric(df$starting_uM)
-  check_if_not_numeric(df$dilution_factor)
+  df <- as.data.frame(apply(df,2, trimws))
+  df$starting_uM <- as.numeric(as.character(df$starting_uM))
+  df$dilution_factor <- as.numeric(as.character(df$dilution_factor))
+  if ((!is.numeric(df$starting_uM) | !is.numeric(df$dilution_factor))) {
+    cli::cli_abort(
+      c(
+        "Provided dose vector must be a numeric.",
+        "x" = " check meta starting_uM and dilution factor data type"
+      ))}
+
   n <- df %>% dplyr::group_by(.data$plate_id, .data$position_id) %>%
     dplyr::filter(dplyr::n() > 1)
   if (dim(n)[1] > 0) {
@@ -80,7 +89,7 @@ validate_meta <- function(df) {
 #' Checks for the existence of raw plate reader files, prefixed with either 'TRno' or 'automated'
 #'
 #' @param file_path A path to the directory where raw data is stored with  meta file
-#' @export
+#' @noRd
 #' @return A list of raw files for analysis.
 check_raw_files <- function(file_path) {
   file.names <- dir(dirname(file_path),
@@ -106,7 +115,7 @@ check_raw_files <- function(file_path) {
 #' @param meta The meta dataframe.
 #'
 #' @return A list of plate data: 1. raw data, 2. plate ID, 3.date 4. filename
-#' @export
+#' @noRd
 import_plate <-  function(file, meta) {
   j <- 1
   plates <- list()
@@ -153,7 +162,7 @@ import_plate <-  function(file, meta) {
     }
 
     #get date of plate read from file
-    date <- as.data.frame(read.csv(i,
+    date <- as.data.frame(utils::read.csv(i,
                                    sep = ",",
                                    header = FALSE,
                                    nrows = 3,

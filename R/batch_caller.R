@@ -40,14 +40,21 @@ fit_data <- function(file_path, batch_id) {
 
         #format and append normalised data
 
-        data_f <- data %>% dplyr::mutate(value = round(.data$value,2),
-                                       dose = round(.data$dose, 5)) %>%
-          tidyr::pivot_wider(names_from = replicate,
-                             values_from = .data$value) %>%
-          dplyr::mutate(key = plate_assays[j,'IC50_key'],
-                        .before = .data$dose)
+        data_f <- cbind(key = plate_assays[j,'IC50_key'], data)
 
-        if (!"replicate_3" %in% colnames(data_f)) { data_f$replicate_3 <- NA}
+        data_f[,4] <- round(data_f[,4],2)
+        data_f <- stats::reshape(data = data_f,
+                                 direction = "wide",
+                             timevar = "replicate",
+                             idvar = "dose",
+                             v.names = "value",
+                             sep = "_")
+        colnames(data_f) <- gsub("value",
+                                    "replicate",
+                                    colnames(data_f))
+
+        if (!"replicate_3" %in% colnames(data_f)) {
+          data_f$replicate_3 <- NA }
 
         data_all <- rbind(data_all, data_f)
 
@@ -120,12 +127,20 @@ plot_fit <- function(results, data, batch_id,
                      colour.var = 'cell',
                      facet.var = NULL,
                      grid.var = 3) {
-  cli::cli_h2(left = "Generating plots")
-  n <- data %>% tidyr::pivot_longer(cols = -c(.data$dose, .data$key),
-                                 names_to = "replicate",
-                                 values_to = "value") %>%
-    dplyr::left_join(results, .data,by = c('IC50_key' = 'key')) %>%
-    dplyr::arrange(.data$index)
+
+  cli::cli_h2("Generating plots")
+
+  data  <- data.frame(stats::reshape(data = data,
+                                     direction = "long",
+                                     v.names = "value",
+                                     varying =  3:5,
+                                     idvar = c("key","dose"),
+                                     timevar = "replicate"),
+                      times = names(data)[3:5])
+ rownames(data) <- NULL
+  n <- results %>%
+    dplyr::left_join(data,by = c('IC50_key' = 'key')) %>%
+    dplyr::arrange(index)
 
   c <- generate_curve(n)
 
@@ -135,9 +150,10 @@ plot_fit <- function(results, data, batch_id,
   for (i in g) {
     sub.c <- subset(c, c[[plot.var]] == i)
     sub.n <- subset(n, n[[plot.var]] == i)
+
     index <- unique(sub.n$index)
-    suppressWarnings(MaxD <- max(sub.c$dose))
-    suppressWarnings(MinD <- min(sub.c$dose))
+    suppressWarnings(MaxD <- max(sub.n$dose))
+    suppressWarnings(MinD <- min(sub.n$dose))
 
     conc <- 'uM'
     if (MaxD <= 1) {
@@ -145,10 +161,11 @@ plot_fit <- function(results, data, batch_id,
       sub.n$dose <- sub.n$dose*1000
       conc <- 'nM'
 
-      suppressWarnings(MinD <- min(sub.c$dose))
-      suppressWarnings(MaxD <- max(sub.c$dose))
+      suppressWarnings(MinD <- min(sub.n$dose))
+      suppressWarnings(MaxD <- max(sub.n$dose))
     }
     colour.var <- rlang::sym(colour.var)
+
     suppressWarnings(
       all_grouped_plots[[j]] <-
         ggplot2::ggplot(data = sub.n,
@@ -191,7 +208,8 @@ plot_fit <- function(results, data, batch_id,
                   width = 11, height = 11,
                   units = "in",
                   dpi = 300))
-  cli::cli_inform("v" = "Export complete")
+  cli::cli_inform(c("v" = "Export complete"))
   return(all_grouped_plots)
 }
+
 

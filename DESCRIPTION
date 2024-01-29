@@ -7,22 +7,19 @@ Maintainer: Ray Coyle <ray.coyle88@gmail.com>
 Description: A tailored package to analyse raw dose-response data and corresponding meta data.
 License: GPL-3
 Encoding: UTF-8
-LazyData: false
+LazyData: true
 RoxygenNote: 7.2.3
 URL: https://github.com/rayVonW/gamma, https://rayvonw.github.io/gamma/
 BugReports: https://github.com/rayVonW/gamma/issues
 Depends: 
     R (>= 2.10)
 Imports:
-    glue,
-    tidyr,
     magrittr,
     cli,
     dplyr,
     drc,
     stringi,
     stats,
-    stringr,
     utils,
     rlang,
     ggplot2,

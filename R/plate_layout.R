@@ -6,7 +6,7 @@
 #' @param plate A dataframe of plate reader measurements
 #'
 #' @return A dataframe of plate position coordinates and control values
-#' @export
+#' @noRd
 get_locations <- function(assay, plate){
   #The four formats are stored in sysdata.rda and are lazy loaded:
   #triplicate_384, triplicate_96, duplicate_384, duplicate_96
@@ -86,7 +86,7 @@ get_locations <- function(assay, plate){
 #' @param assays_info A dataframe of meta data
 #'
 #' @return A dataframe of normalised values for a dose-response assay
-#' @export
+#' @noRd
 #'
 get_assay_data <- function(data, location, assays_info){
   #retrieve assay specific data
@@ -101,7 +101,8 @@ get_assay_data <- function(data, location, assays_info){
   #Create percentage dataframe
 
   data_pct <- data.frame(sapply(names(data_set_blank),
-                                function(x) { data_set_blank[paste0(x, "_pct")] <<- ((data_set_blank[x] / data_set_blank[nrow(data_set_blank),x])*100) }))
+                                function(x) { data_set_blank[paste0(x, "_pct")] <<- (
+                                  (data_set_blank[x] / data_set_blank[nrow(data_set_blank),x])*100) }))
 
 
   #create dose series and add to data
@@ -109,7 +110,7 @@ get_assay_data <- function(data, location, assays_info){
   startDose <- as.numeric(as.character(assays_info$starting_uM))
   dose <- c()
 
-  for (q in 1:nrow(data_pct )){
+  for (q in 1:nrow(data_pct )) {
     dose[q] <- startDose
     startDose <- startDose/dilutionF
 
@@ -118,19 +119,23 @@ get_assay_data <- function(data, location, assays_info){
   data_pct  <- cbind(dose = dose, data_pct )
 
   #rename columns
-  if (ncol(data_pct ) == 3){
-    colnames(data_pct ) <- c("dose", "replicate_1", "replicate_2")
+  if (ncol(data_pct ) == 3) {
+    rep_names <- c("dose", "replicate_1", "replicate_2")
   }
   else {
-    colnames(data_pct ) <- c("dose", "replicate_1", "replicate_2", "replicate_3")
+    rep_names <- c("dose", "replicate_1", "replicate_2", "replicate_3")
   }
+  colnames(data_pct ) <- rep_names
 
   #convert to long format
-  #data_pct  <- reshape2::melt(data_pct , id.vars = "dose")
-  data_pct  <- data_pct %>% tidyr::pivot_longer(!dose,
-                                               names_to = "replicate",
-                                               values_to = "value")
+data_pct  <- data.frame(stats::reshape(data = data_pct,
+                                         direction = "long",
+                                         v.names = "value",
+                                         varying = rep_names[-1],
+                                         idvar = "dose",
+                                         timevar = "replicate"))
 
+  rownames(data_pct) <- NULL
 
   data_pct$value <- ifelse(data_pct$value > 100, 100, data_pct$value)
   data_pct$value <- ifelse(data_pct$value < 0, 0, data_pct$value)
@@ -138,3 +143,4 @@ get_assay_data <- function(data, location, assays_info){
   return(data_pct)
 
 }
+
