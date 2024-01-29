@@ -21,6 +21,12 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/my-vignette.html">Analysing batches of dose-response data</a>
+  </div>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
@@ -53,49 +59,19 @@
 
       <dl><dt>
           
-          <code><a href="check_raw_files.html">check_raw_files()</a></code> 
+          <code><a href="example_meta.html">example_meta</a></code> 
         </dt>
-        <dd>Checks for the existence of raw plate reader files, prefixed with either 'TRno' or 'automated'</dd>
+        <dd>Dose response meta data example</dd>
       </dl><dl><dt>
           
-          <code><a href="fit.LL4.html">fit.LL4()</a></code> 
-        </dt>
-        <dd>drc fitting function</dd>
-      </dl><dl><dt>
-          
-          <code><a href="get_assay_data.html">get_assay_data()</a></code> 
-        </dt>
-        <dd>subsets plate data per assay, converts values to percentages then adds the dose curve</dd>
-      </dl><dl><dt>
-          
-          <code><a href="get_locations.html">get_locations()</a></code> 
-        </dt>
-        <dd>finds drug assay data on a 96 or 384 well plate</dd>
-      </dl><dl><dt>
-          
-          <code><a href="import_plate.html">import_plate()</a></code> 
-        </dt>
-        <dd>checks raw data files</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_csv_file.html">read_csv_file()</a></code> 
-        </dt>
-        <dd>reads in csv of meta data for drug assays</dd>
-      </dl><dl><dt>
-          
-          <code><a href="retrieve_results.html">retrieve_results()</a></code> 
-        </dt>
-        <dd>adds model coefficients to data</dd>
-      </dl><dl><dt>
-          
-          <code><a href="run.html">run()</a></code> 
+          <code><a href="fit_data.html">fit_data()</a></code> 
         </dt>
         <dd>iterates over assays for IC50 estimation</dd>
       </dl><dl><dt>
           
-          <code><a href="validate_meta.html">validate_meta()</a></code> 
+          <code><a href="plot_fit.html">plot_fit()</a></code> 
         </dt>
-        <dd>validates the meta file for assays and summarise contents</dd>
+        <dd>Produces group plots of dose response models from fit_data()</dd>
       </dl></div>
   </main></div>
 
