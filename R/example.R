@@ -6,8 +6,8 @@
 #' @param file Name of file. If `NULL`, the example files will be listed.
 #' @export
 #' @examples
-#' readr_example()
-#' readr_example("TRno4850.csv")
+#' batchCurve_example()
+#' batchCurve_example("TRno4850.csv")
 batchCurve_example <- function(file = NULL) {
   if (is.null(file)) {
     dir(system.file("extdata", package = "batchCurve"))

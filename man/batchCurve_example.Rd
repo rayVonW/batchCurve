@@ -14,6 +14,6 @@ batchCurve comes bundled with a number of sample files in its `inst/extdata`
 directory. This function make them easy to access
 }
 \examples{
-readr_example()
-readr_example("TRno4850.csv")
+batchCurve_example()
+batchCurve_example("TRno4850.csv")
 }

@@ -24,7 +24,8 @@ Imports:
     rlang,
     ggplot2,
     gridExtra,
-    scales
+    scales,
+    flextable
 Suggests: 
     knitr,
     rmarkdown
