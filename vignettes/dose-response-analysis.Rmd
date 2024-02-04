@@ -50,7 +50,7 @@ batchCurve_example()
 ```{r example_data}
 f <- batchCurve_example("example_meta.csv")
 border <- flextable::fp_border_default()
-flextable::flextable(head(read.csv(f))) %>%
+flextable::flextable(head(utils::read.csv(f))) %>%
   flextable::color(j = c("plate_id"), color = "orange", part = "header") %>%
   flextable::color(j = 2:4, color = "red", part = "header") %>%
   flextable::color(j = 5:7, color = "blue", part = "header") %>%
@@ -72,11 +72,11 @@ The analysis pipeline was developed to be compatible with an Omega Fluostar plat
 
 
 ```{r}
-f <- batchCurve_example("TRno3735.csv")
-read.csv(f, nrow = 2)
+f <- batchCurve_example("TRno3735.CSV")
+utils::read.csv(f, nrow = 2)
 ```
  
 ```{r}
-head(read.csv(f, skip = 10),11)
+head(utils::read.csv(f, skip = 10),11)
 ```
 
