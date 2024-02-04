@@ -4,42 +4,33 @@
     <loc>https://rayvonw.github.io/gamma/404.html</loc>
   </url>
   <url>
+    <loc>https://rayvonw.github.io/gamma/articles/dose-response-analysis.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/gamma/articles/index.html</loc>
+  </url>
+  <url>
     <loc>https://rayvonw.github.io/gamma/authors.html</loc>
   </url>
   <url>
     <loc>https://rayvonw.github.io/gamma/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/check_raw_files.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/batchCurve-package.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/fit.LL4.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/batchCurve_example.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/gamma-package.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/example_meta.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/get_assay_data.html</loc>
-  </url>
-  <url>
-    <loc>https://rayvonw.github.io/gamma/reference/get_locations.html</loc>
-  </url>
-  <url>
-    <loc>https://rayvonw.github.io/gamma/reference/import_plate.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/fit_data.html</loc>
   </url>
   <url>
     <loc>https://rayvonw.github.io/gamma/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/read_csv_file.html</loc>
-  </url>
-  <url>
-    <loc>https://rayvonw.github.io/gamma/reference/retrieve_results.html</loc>
-  </url>
-  <url>
-    <loc>https://rayvonw.github.io/gamma/reference/run.html</loc>
-  </url>
-  <url>
-    <loc>https://rayvonw.github.io/gamma/reference/validate_meta.html</loc>
+    <loc>https://rayvonw.github.io/gamma/reference/plot_fit.html</loc>
   </url>
 </urlset>
