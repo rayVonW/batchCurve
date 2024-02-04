@@ -1,6 +1,6 @@
 # .onLoad <- function(libname, pkgname)
 # {
-#   library.dynam("gamma", pkgname, libname)
+#   library.dynam("batchCurve", pkgname, libname)
 # }
 
 .onAttach <- function(libname, pkgname) {

@@ -1,4 +1,4 @@
-Package: gamma
+Package: batchCurve
 Type: Package
 Title: Provides batch analysis for dose-response modelling
 Version: 0.1.0

@@ -1,0 +1,24 @@
+plate_id,position_id,format,replicates,index,compound,cell,starting_uM,dilution_factor
+plate_4,pos_1,384w,3,C01,Torin2,Dd2,0.04,2
+plate_4,pos_2,384w,3,C01,Torin2,Dd2,0.04,2
+plate_4,pos_3,384w,3,C01,Torin2,Dd2,0.04,2
+plate_4,pos_4,384w,3,C02,BT-C10,Dd2,0.5,2
+plate_4,pos_5,384w,3,C02,BT-C10,Dd2,0.5,2
+plate_4,pos_6,384w,3,C03,NITD609,Dd2,0.04,2
+plate_4,pos_7,384w,3,C03,NITD609,Dd2,0.04,2
+plate_4,pos_8,384w,3,C03,NITD609,Dd2,0.04,2
+plate_4,pos_9,384w,3,C02,BT-C10,Dd2,0.5,2
+plate_4,pos_10,384w,3,C02,BT-C10,Dd2,0.5,2
+plate_A1,pos_1,96w,3,C04,06-21-C37,Dd2,16.6,2
+plate_A1,pos_2,96w,3,C04,06-21-C37,3D7,19.5,2
+plate_A2,pos_1,96w,3,C05,test_fail,Dd2,10,2
+plate_A3,pos_3,96w,2,C06,04-21-C01,Dd2,10,2
+plate_5,pos_1,384w,2,C01,Torin2,Dd2,0.04,2
+plate_5,pos_2,384w,2,C03,NITD609,Dd2,0.04,2
+plate_5,pos_3,384w,2,C02,BT-C10,Dd2 ,0.5,2
+plate_5,pos_4,384w,2,C01,Torin2,Dd2,0.04,2
+plate_5,pos_5,384w,2,C03,NITD609,Dd2,0.04,2
+plate_5,pos_6,384w,2,C02,BT-C10,Dd2,0.5,2
+plate_5,pos_7,384w,2,C01,Torin2 ,Dd2,0.04,2
+plate_5,pos_8,384w,2,C03,NITD609,Dd2,0.04,2
+plate_5,pos_9,384w,2,C02,BT-C10,Dd2,0.5,2
