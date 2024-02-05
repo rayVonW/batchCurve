@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="batchCurve">
-<title>dose-response-analysis • batchCurve</title>
+<title>dose response analysis • batchCurve</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dose-response-analysis">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dose response analysis">
 <meta property="og:description" content="batchCurve">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -41,7 +41,8 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/dose-response-analysis.html">dose-response-analysis</a>
+    <a class="dropdown-item" href="../articles/dose-response-analysis.html">dose response analysis</a>
+    <a class="dropdown-item" href="../articles/visualise-models.html">visualise models</a>
   </div>
 </li>
       </ul>
@@ -68,7 +69,7 @@
 <link href="dose-response-analysis_files/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="dose-response-analysis_files/tabwid-1.1.3/tabwid.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>dose-response-analysis</h1>
+      <img src="" class="logo" alt=""><h1>dose response analysis</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/rayVonW/gamma/blob/HEAD/vignettes/dose-response-analysis.Rmd" class="external-link"><code>vignettes/dose-response-analysis.Rmd</code></a></small>
@@ -79,29 +80,35 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rayVonW/gamma" class="external-link">batchCurve</a></span><span class="op">)</span></span></code></pre></div>
-<p>This tool</p>
 <div class="section level2">
 <h2 id="accepted-assay-format">Accepted assay format<a class="anchor" aria-label="anchor" href="#accepted-assay-format"></a>
 </h2>
 <p>Accepted formats include a 10 point serial dilution of 2-3 replicates
-in either 96 or 384 well plates. The available positions for each format
-are shown below:</p>
+in either 96 or 384 well plates. The exact format will dictate how many
+positions (pos_x) are available on the plate. The available positions
+for each format are shown below:</p>
 <div class="figure">
 <img src="layout_96w.png" width="700" alt=""><p class="caption">96 well layout options.</p>
 </div>
-<p><img src="layout_384w.png" width="700" alt="384 well layout options."> batchCurve comes bundled with a number
-of example dose-response sample files:</p>
+<div class="figure">
+<img src="layout_384w.png" width="700" alt=""><p class="caption">384 well layout options.</p>
+</div>
+<p>batchCurve comes bundled with a number of example dose-response
+sample files:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "example_meta.csv" "TRno0000.CSV"     "TRno0001.CSV"     "TRno0002.CSV"    </span></span>
-<span><span class="co">#&gt; [5] "TRno0003.CSV"     "TRno3735.CSV"     "TRno3965.CSV"     "TRno4849.CSV"    </span></span>
-<span><span class="co">#&gt; [9] "TRno4850.CSV"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># lists the names of available example data files</span></span>
+<span><span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "example_meta.csv"     "example1_data.csv"    "example1_results.csv"</span></span>
+<span><span class="co">#&gt;  [4] "TRno0000.CSV"         "TRno0001.CSV"         "TRno0002.CSV"        </span></span>
+<span><span class="co">#&gt;  [7] "TRno0003.CSV"         "TRno3735.CSV"         "TRno3965.CSV"        </span></span>
+<span><span class="co">#&gt; [10] "TRno4849.CSV"         "TRno4850.CSV"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="meta-data-requirments">Meta data requirments<a class="anchor" aria-label="anchor" href="#meta-data-requirments"></a>
 </h2>
 <p><strong>Example_meta.csv</strong> contains the meta data that
-describe the assays and plate contents:</p>
+describe the assays and plate contents, here one row represent one
+assay:</p>
 <ul>
 <li>
 <span style="color: orange;"><strong>Plate ID</strong></span>
@@ -113,104 +120,107 @@ describing the format and positions on the plate each assay sits</li>
 <span style="color: blue;"><strong>Treatment and cell
 ID</strong></span> information</li>
 <li>
-<span style="color: green;"><strong>Dose range</strong></span>
+<span style="color: purple;"><strong>Dose range</strong></span>
 information</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"example_meta.csv"</span><span class="op">)</span></span>
-<span><span class="va">border</span> <span class="op">&lt;-</span> <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/fp_border_default.html" class="external-link">fp_border_default</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/flextable.html" class="external-link">flextable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/color.html" class="external-link">color</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"plate_id"</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"orange"</span>, part <span class="op">=</span> <span class="st">"header"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/color.html" class="external-link">color</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">4</span>, color <span class="op">=</span> <span class="st">"red"</span>, part <span class="op">=</span> <span class="st">"header"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/color.html" class="external-link">color</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">7</span>, color <span class="op">=</span> <span class="st">"blue"</span>, part <span class="op">=</span> <span class="st">"header"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/color.html" class="external-link">color</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fl">8</span><span class="op">:</span><span class="fl">9</span>, color <span class="op">=</span> <span class="st">"green"</span>, part <span class="op">=</span> <span class="st">"header"</span><span class="op">)</span> <span class="op">%&gt;%</span>  </span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/vline.html" class="external-link">vline</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'plate_id'</span>,<span class="st">'replicates'</span>, <span class="st">'cell'</span><span class="op">)</span>, </span>
-<span>                   border <span class="op">=</span> <span class="va">border</span>, part <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">flextable</span><span class="fu">::</span><span class="fu"><a href="https://davidgohel.github.io/flextable/reference/bold.html" class="external-link">bold</a></span><span class="op">(</span>j <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, bold <span class="op">=</span> <span class="cn">TRUE</span>, part <span class="op">=</span> <span class="st">"header"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">f</span></span></code></pre></div>
 <div class="tabwid">
-<style>.cl-68c6707a{}.cl-68bf7964{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 165, 0, 1.00);background-color:transparent;}.cl-68bf796e{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 0, 0, 1.00);background-color:transparent;}.cl-68bf796f{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 255, 1.00);background-color:transparent;}.cl-68bf7978{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 255, 0, 1.00);background-color:transparent;}.cl-68bf7979{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-68c2150c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-68c21516{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-68c22a9c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ab0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ab1{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ab2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ab3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22aba{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22abb{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22abc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22abd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22abe{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ac4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ac5{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ac6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ac7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ace{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22acf{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ad0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-68c22ad8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="table cl-68c6707a">
+<style>.cl-53ecb486{}.cl-53e5dd64{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 165, 0, 1.00);background-color:transparent;}.cl-53e5dd6e{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 0, 0, 1.00);background-color:transparent;}.cl-53e5dd78{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 255, 1.00);background-color:transparent;}.cl-53e5dd79{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(160, 32, 240, 1.00);background-color:transparent;}.cl-53e5dd7a{font-family:'DejaVu Sans';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-53e880f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-53e880fa{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-53e880fb{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-53e8969e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896a8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896a9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896aa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896ab{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896b2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896b3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896bc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896bd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896be{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896bf{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53e896c6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="table cl-53ecb486">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-68c22a9c"><p class="cl-68c2150c"><span class="cl-68bf7964">plate_id</span></p></th>
-<th class="cl-68c22ab0"><p class="cl-68c2150c"><span class="cl-68bf796e">position_id</span></p></th>
-<th class="cl-68c22ab1"><p class="cl-68c2150c"><span class="cl-68bf796e">format</span></p></th>
-<th class="cl-68c22ab2"><p class="cl-68c21516"><span class="cl-68bf796e">replicates</span></p></th>
-<th class="cl-68c22ab0"><p class="cl-68c2150c"><span class="cl-68bf796f">index</span></p></th>
-<th class="cl-68c22ab1"><p class="cl-68c2150c"><span class="cl-68bf796f">compound</span></p></th>
-<th class="cl-68c22a9c"><p class="cl-68c2150c"><span class="cl-68bf796f">cell</span></p></th>
-<th class="cl-68c22ab3"><p class="cl-68c21516"><span class="cl-68bf7978">starting_uM</span></p></th>
-<th class="cl-68c22aba"><p class="cl-68c21516"><span class="cl-68bf7978">dilution_factor</span></p></th>
+<th class="cl-53e8969e"><p class="cl-53e880f0"><span class="cl-53e5dd64">plate_id</span></p></th>
+<th class="cl-53e896a8"><p class="cl-53e880f0"><span class="cl-53e5dd6e">position_id</span></p></th>
+<th class="cl-53e896a9"><p class="cl-53e880f0"><span class="cl-53e5dd6e">format</span></p></th>
+<th class="cl-53e896aa"><p class="cl-53e880fa"><span class="cl-53e5dd6e">replicates</span></p></th>
+<th class="cl-53e896a8"><p class="cl-53e880f0"><span class="cl-53e5dd78">index</span></p></th>
+<th class="cl-53e896a9"><p class="cl-53e880f0"><span class="cl-53e5dd78">compound</span></p></th>
+<th class="cl-53e8969e"><p class="cl-53e880f0"><span class="cl-53e5dd78">cell</span></p></th>
+<th class="cl-53e896ab"><p class="cl-53e880fa"><span class="cl-53e5dd79">starting_uM</span></p></th>
+<th class="cl-53e896b2"><p class="cl-53e880fa"><span class="cl-53e5dd79">dilution_factor</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_1</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22abe"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">C01</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">Torin2</span></p></td>
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ac4"><p class="cl-68c21516"><span class="cl-68bf7979">0.04</span></p></td>
-<td class="cl-68c22ac5"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_1</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C01</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Torin2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.04</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_2</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22abe"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">C01</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">Torin2</span></p></td>
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ac4"><p class="cl-68c21516"><span class="cl-68bf7979">0.04</span></p></td>
-<td class="cl-68c22ac5"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_2</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C01</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Torin2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.04</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_3</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22abe"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">C01</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">Torin2</span></p></td>
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ac4"><p class="cl-68c21516"><span class="cl-68bf7979">0.04</span></p></td>
-<td class="cl-68c22ac5"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_3</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C01</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Torin2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.04</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_4</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22abe"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">C02</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">BT-C10</span></p></td>
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ac4"><p class="cl-68c21516"><span class="cl-68bf7979">0.50</span></p></td>
-<td class="cl-68c22ac5"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_4</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C02</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">BT-C10</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.50</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_5</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22abe"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22abc"><p class="cl-68c2150c"><span class="cl-68bf7979">C02</span></p></td>
-<td class="cl-68c22abd"><p class="cl-68c2150c"><span class="cl-68bf7979">BT-C10</span></p></td>
-<td class="cl-68c22abb"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ac4"><p class="cl-68c21516"><span class="cl-68bf7979">0.50</span></p></td>
-<td class="cl-68c22ac5"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_5</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C02</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">BT-C10</span></p></td>
+<td class="cl-53e896b3"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bc"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.50</span></p></td>
+<td class="cl-53e896bd"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-68c22ac6"><p class="cl-68c2150c"><span class="cl-68bf7979">plate_4</span></p></td>
-<td class="cl-68c22ac7"><p class="cl-68c2150c"><span class="cl-68bf7979">pos_6</span></p></td>
-<td class="cl-68c22ace"><p class="cl-68c2150c"><span class="cl-68bf7979">384w</span></p></td>
-<td class="cl-68c22acf"><p class="cl-68c21516"><span class="cl-68bf7979">3</span></p></td>
-<td class="cl-68c22ac7"><p class="cl-68c2150c"><span class="cl-68bf7979">C03</span></p></td>
-<td class="cl-68c22ace"><p class="cl-68c2150c"><span class="cl-68bf7979">NITD609</span></p></td>
-<td class="cl-68c22ac6"><p class="cl-68c2150c"><span class="cl-68bf7979">Dd2</span></p></td>
-<td class="cl-68c22ad0"><p class="cl-68c21516"><span class="cl-68bf7979">0.04</span></p></td>
-<td class="cl-68c22ad8"><p class="cl-68c21516"><span class="cl-68bf7979">2</span></p></td>
+<td class="cl-53e896be"><p class="cl-53e880fb"><span class="cl-53e5dd7a">plate_4</span></p></td>
+<td class="cl-53e896bf"><p class="cl-53e880fb"><span class="cl-53e5dd7a">pos_6</span></p></td>
+<td class="cl-53e896c6"><p class="cl-53e880fb"><span class="cl-53e5dd7a">384w</span></p></td>
+<td class="cl-53e896be"><p class="cl-53e880fb"><span class="cl-53e5dd7a">3</span></p></td>
+<td class="cl-53e896bf"><p class="cl-53e880fb"><span class="cl-53e5dd7a">C03</span></p></td>
+<td class="cl-53e896c6"><p class="cl-53e880fb"><span class="cl-53e5dd7a">NITD609</span></p></td>
+<td class="cl-53e896be"><p class="cl-53e880fb"><span class="cl-53e5dd7a">Dd2</span></p></td>
+<td class="cl-53e896bf"><p class="cl-53e880fb"><span class="cl-53e5dd7a">0.04</span></p></td>
+<td class="cl-53e896c6"><p class="cl-53e880fb"><span class="cl-53e5dd7a">2</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<ul>
+<li><p>The column names of the meta file rely of exact text matching, so
+its best to work from a template file.</p></li>
+<li><p>All assays on the same plate must be setup with the same number
+of replicates, but formats between plates in the same batch can be
+different, i.e the meta could include a 384 well plate in triplicate
+containing 10 assays as well as a 96 well plate in duplicate containing
+3 assays.</p></li>
+<li><p>You can filter the meta data if you wish to exclude certain
+assays.</p></li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="raw-data-format-requirements">Raw data format requirements<a class="anchor" aria-label="anchor" href="#raw-data-format-requirements"></a>
@@ -219,28 +229,119 @@ information</li>
 Fluostar plate reader csv output (ASCII), which includes 3 required
 components:</p>
 <ol style="list-style-type: decimal">
-<li>Data stored in files with a prefix - ‘TRno’ or ‘automated’.</li>
-<li>An ID variable set when reading the plate which matches the plate_id
-in the meta file (Omega prefixes with ‘ID1:’).</li>
-<li>Raw read data in plate format where well A01 begins in cell [1,11]
-of the file.</li>
+<li>Data stored in files with a prefix - <strong>‘TRno’</strong> or
+<strong>‘automated’</strong>.</li>
 </ol>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"TRno3735.CSV"</span><span class="op">)</span></span>
-<span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">f</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        Test.name..automated_syber  X X.1 X.2 X.3 X.4 X.5 X.6 X.7 X.8 X.9 X.10</span></span>
-<span><span class="co">#&gt; 1 Date: 28/06/2021 Time: 11:58:12 NA  NA  NA  NA  NA  NA  NA  NA  NA  NA   NA</span></span>
-<span><span class="co">#&gt; 2                   ID1: plate_A3 NA  NA  NA  NA  NA  NA  NA  NA  NA  NA   NA</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#look at one of the raw data file examples</span></span>
+<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"TRno3735.CSV"</span><span class="op">)</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>An <strong>ID</strong> variable set when reading the plate which
+matches the plate_id in the meta file (Omega prefixes with ‘ID1:’). This
+should be in row 3 column 1 of raw data csv and must match exactly you
+meta file plate_ID name.</li>
+</ol>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">f</span>, skip <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,<span class="fl">11</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   X341 X574 X598 X600 X626 X666 X705 X708 X722 X737 X746 X512</span></span>
-<span><span class="co">#&gt; 1  341  574  598  600  626  666  705  708  722  737 6997  512</span></span>
-<span><span class="co">#&gt; 2  341  574  598  600  626  666  705  708  722  737 5973  485</span></span>
-<span><span class="co">#&gt; 3  341  574  598  600  626  666  705  708  722  737 6997  516</span></span>
-<span><span class="co">#&gt; 4  341  574  598  600  626  666  705  708  722  737 5973  517</span></span>
-<span><span class="co">#&gt; 5  696  702  785 1474 2633 4078 5928 6064 6246 6965 6997  524</span></span>
-<span><span class="co">#&gt; 6  636  621  714 1336 2365 3731 5050 6085 6065 5927 5973  483</span></span>
-<span><span class="co">#&gt; 7  341  574  598  600  626  666  705  708  722  737  746  512</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#batchCurve looks in row 3 column 1 for ID variable</span></span>
+<span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">f</span>, nrow <span class="op">=</span> <span class="fl">3</span>, header <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">[</span><span class="fl">3</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="co">#&gt; [1] "ID1: plate_A3"</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Raw read data in plate format where well A01 begins in row 10,
+column 1 of the file.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># showing file from row 9</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">f</span>, skip <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,<span class="fl">11</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Chromatic..1   X X.1  X.2  X.3  X.4  X.5  X.6  X.7  X.8  X.9 X.10</span></span>
+<span><span class="co">#&gt; 1     Cycle: 1  NA  NA   NA   NA   NA   NA   NA   NA   NA   NA   NA</span></span>
+<span><span class="co">#&gt; 2          341 574 598  600  626  666  705  708  722  737  746  512</span></span>
+<span><span class="co">#&gt; 3          341 574 598  600  626  666  705  708  722  737 6997  512</span></span>
+<span><span class="co">#&gt; 4          341 574 598  600  626  666  705  708  722  737 5973  485</span></span>
+<span><span class="co">#&gt; 5          341 574 598  600  626  666  705  708  722  737 6997  516</span></span>
+<span><span class="co">#&gt; 6          341 574 598  600  626  666  705  708  722  737 5973  517</span></span>
+<span><span class="co">#&gt; 7          696 702 785 1474 2633 4078 5928 6064 6246 6965 6997  524</span></span>
+<span><span class="co">#&gt; 8          636 621 714 1336 2365 3731 5050 6085 6065 5927 5973  483</span></span>
+<span><span class="co">#&gt; 9          341 574 598  600  626  666  705  708  722  737  746  512</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>To fit curves to a batch of raw data, you need to supply the
+<code><a href="../reference/fit_data.html">fit_data()</a></code> function with the meta file. This can either be
+with the file path or by setting the working directory to where the data
+lives. If no path is supplied the function assumes all data is in the
+working directory. All output/results are exported to the same directory
+as the meta file.</p>
+<p>In addition, the user can supply the function with a text batch_id,
+this is used to prefix the output file names. This is advisable to avoid
+accumulating result files with the same name and makes searching results
+easier, particularity if analysis is run a second time on a filtered
+meta file.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#use example files</span></span>
+<span><span class="va">meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"example_meta.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">l</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fit_data.html">fit_data</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="va">meta</span>, batch_id <span class="op">=</span> <span class="st">'example1'</span><span class="op">)</span></span></code></pre></div>
+<p>This function will provide some console feedback on the analysis
+progress. Once complete, two objects are exported to csv file and also
+returned in a list. <strong>note:</strong> The first assay in the
+example data set is artificial and designed to fail fitting!</p>
+<ol style="list-style-type: decimal">
+<li>A <strong>batch_id</strong>_results.csv’ file containing the meta
+data and model coefficient columns appended. This data frame is also
+returned as the first item in a list for further analysis, here each row
+still represents 1 assay. A unique identifier (IC50_key) is assigned to
+avoid clashes between repeat assays and link to the assay data.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">l</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">m</span>, <span class="fl">10</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">8</span>,<span class="fl">13</span>,<span class="fl">20</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt;          IC50_key index cell                 IC50 hill_slope</span></span>
+<span><span class="co">#&gt; 1  VItFUKbnxuKBwD   C05  Dd2               Failed         NA</span></span>
+<span><span class="co">#&gt; 14 JBPqZQjtqsCIeq   C06  Dd2    0.397087567384264   1.673443</span></span>
+<span><span class="co">#&gt; 11 F2V5RZW5mYMm1B   C04  Dd2    0.409200699062012   3.917486</span></span>
+<span><span class="co">#&gt; 12 x23YC4qmXYO59O   C04  3D7    0.609087279032902   4.360740</span></span>
+<span><span class="co">#&gt; 5  oB9thK71bb6OjU   C01  Dd2  0.00183920429016226   2.970942</span></span>
+<span><span class="co">#&gt; 2  WCLWLyh31QUENq   C01  Dd2    0.001979863848655   6.139312</span></span>
+<span><span class="co">#&gt; 3  SnxDjKihNRGHLx   C01  Dd2  0.00199157050920151   5.418731</span></span>
+<span><span class="co">#&gt; 4  SY9FE6bb1iTjrb   C02  Dd2   0.0118873520155513   2.471598</span></span>
+<span><span class="co">#&gt; 9  Tn6eumN0kANuTv   C02  Dd2   0.0120119550447347   2.119453</span></span>
+<span><span class="co">#&gt; 6  icTUsQ1GKA0CP8   C03  Dd2 0.000860595386861181   6.341140</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Normalised measurements and dose in uM are exported and the unique
+IC50_key links it back to the assay coefficients data frame.</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="va">l</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">d</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               key        dose replicate_1 replicate_2 replicate_3</span></span>
+<span><span class="co">#&gt; 1  VItFUKbnxuKBwD 10.00000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 2  VItFUKbnxuKBwD  5.00000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 3  VItFUKbnxuKBwD  2.50000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 4  VItFUKbnxuKBwD  1.25000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 5  VItFUKbnxuKBwD  0.62500000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 6  VItFUKbnxuKBwD  0.31250000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 7  VItFUKbnxuKBwD  0.15625000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 8  VItFUKbnxuKBwD  0.07812500       96.41       96.41       96.41</span></span>
+<span><span class="co">#&gt; 9  VItFUKbnxuKBwD  0.03906250       96.41       96.41       96.41</span></span>
+<span><span class="co">#&gt; 10 VItFUKbnxuKBwD  0.01953125       96.41       96.41       96.41</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="quality-control">Quality Control<a class="anchor" aria-label="anchor" href="#quality-control"></a>
+</h2>
+<p>The standard Hill model enables generating sigmoidal curves that
+capture dose-response data in most cases. However, this is not
+appropriate in cases with multiple points of inflection, i.e multiphasic
+data. It is important for users to visually assess both the assay
+quality and the fit quality of their data before accepting an IC50
+value.</p>
+<p>A separate function for plotting the data and models is included in
+batchCurve, <code><a href="../reference/plot_fit.html">plot_fit()</a></code>. This functionality is separated
+from the model fitting procedure to allow the user the option to re-plot
+the results after some manipulation, i.e you want to filter some failed
+assays out or merge multiple batches together.</p>
+<p>See <code>vignette("visualise models")</code> for a walk through of
+this procedure.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

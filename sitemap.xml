@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rayvonw.github.io/gamma/404.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/404.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/articles/dose-response-analysis.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/articles/dose-response-analysis.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/articles/index.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/authors.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/articles/visualise-models.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/index.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/authors.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/batchCurve-package.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/index.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/batchCurve_example.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/reference/batchCurve-package.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/example_meta.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/reference/batchCurve_example.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/fit_data.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/reference/example_meta.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/index.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/reference/fit_data.html</loc>
   </url>
   <url>
-    <loc>https://rayvonw.github.io/gamma/reference/plot_fit.html</loc>
+    <loc>https://rayvonw.github.io/batchCurve/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/batchCurve/reference/plot_fit.html</loc>
   </url>
 </urlset>

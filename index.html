@@ -41,7 +41,8 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/dose-response-analysis.html">dose-response-analysis</a>
+    <a class="dropdown-item" href="articles/dose-response-analysis.html">dose response analysis</a>
+    <a class="dropdown-item" href="articles/visualise-models.html">visualise models</a>
   </div>
 </li>
       </ul>
@@ -63,8 +64,78 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-A tailored package to analyse raw dose-response data and corresponding meta data.
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="batchcurve">batchCurve<a class="anchor" aria-label="anchor" href="#batchcurve"></a>
+</h1></div>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p>batchCurve a is bespoke analytical workflow for batch analysis of dose-response assays. Assays formats must have a 10 point serial dilution as well as a positive and negative growth control. The accepted layouts assume either duplicate or triplicate measurement in either 96 or 384 well culture plates.</p>
+<p>A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. more details of setup can be found in <code>vignette("dose response analysis")</code>.</p>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>There is an install_github function in devtools package that allows users to install R packages hosted on GitHub. It requests developer’s name/package name.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#First install devtools from CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
+<span><span class="co"># load devtools</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
+<span><span class="co"># use function to install a github package</span></span>
+<span><span class="fu">install_github</span><span class="op">(</span><span class="st">"rayVonW/batchCurve"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>You can load the package with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rayVonW/gamma" class="external-link">batchCurve</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; _______________________________________</span></span>
+<span><span class="co">#&gt;   This is version 0.1.0 of batchCurve</span></span>
+<span><span class="co">#&gt; ____________________________________________</span></span>
+<span><span class="co">#&gt; Available functions:</span></span>
+<span><span class="co">#&gt; batchCurve_example</span></span>
+<span><span class="co">#&gt; fit_data</span></span>
+<span><span class="co">#&gt; plot_fit</span></span></code></pre></div>
+<p>There are two main functions to use:</p>
+<ol style="list-style-type: decimal">
+<li>
+<code><a href="reference/fit_data.html">fit_data()</a></code>: Fits log logistic models to a batch of raw dose-response data</li>
+</ol>
+<ul>
+<li>This expects as an argument a <strong>meta.csv</strong> file name, this file is to be found in a directory with all raw data file.</li>
+<li>A <strong>batch id</strong> text name - to prefix results files with.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#all meta and raw data stored in ~/batch</span></span>
+<span><span class="fu"><a href="reference/fit_data.html">fit_data</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="st">'~/batch/meta-data.csv'</span>, </span>
+<span>         batch_id <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="articles/dose-response-analysis.html">vignette("dose-response-analysis")</a></code> gives an expanded introduction to fitting batches of data.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>
+<code><a href="reference/plot_fit.html">plot_fit()</a></code>: Accepts batch log-logistic coefficients and normalised raw data to produce visualisations of dose-response assay data and allow assessment of their fit.</li>
+</ol>
+<ul>
+<li>It accepts a data frame of model <strong>results</strong> and a data frame of normalised <strong>data</strong>, both are exported directly from <code><a href="reference/fit_data.html">fit_data()</a></code>.</li>
+<li>User can include a batch_id for linking visualisation to results in file prefixes.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#all meta and raw data stored in ~/batch</span></span>
+<span><span class="fu"><a href="reference/plot_fit.html">plot_fit</a></span><span class="op">(</span>results <span class="op">=</span> <span class="va">df1</span>, </span>
+<span>         data <span class="op">=</span> <span class="va">df2</span>,</span>
+<span>         batch_id <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="articles/visualise-models.html">vignette("visualise-models")</a></code> gives an expanded introduction to plotting out results.</p>
+</div>
+<div class="section level2">
+<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+</h2>
+<ul>
+<li>
+<code><a href="reference/fit_data.html">fit_data()</a></code> is a wrapper function for the R package [drc] (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696819" class="external-link uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696819</a>).</li>
+</ul>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

@@ -3,8 +3,9 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   dose-response-analysis: dose-response-analysis.html
-last_built: 2024-02-04T19:12Z
+  visualise-models: visualise-models.html
+last_built: 2024-02-05T17:38Z
 urls:
-  reference: https://rayvonw.github.io/gamma/reference
-  article: https://rayvonw.github.io/gamma/articles
+  reference: https://rayvonw.github.io/batchCurve/reference
+  article: https://rayvonw.github.io/batchCurve/articles
 
