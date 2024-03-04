@@ -7,8 +7,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>")
 ```
+# batchCurve <a href="https://rayvonw.github.io/batchCurve/"><img src="man/figures/logo.png" align="right" height="120" alt="batchCurve website" /></a>
 
-# batchCurve
 
 ## Overview
 
@@ -30,37 +30,68 @@ install_github("rayVonW/batchCurve")
 ```
 ## Usage
 
+The overall process of curve fitting and significance testing is summarised below, where the user applies quality control at certain steps.
+<center>
+![](vignettes/workflow.png){width=600px}
+</center>
+
 You can load the package with:
 
 ```{r load}
 library(batchCurve)
 ```
 
-There are two main functions to use:
+There are three main functions to use:
 
-1. `fit_data()`: Fits log logistic models to a batch of raw dose-response data
+## 1. Fit model to data: 
+[fit_data()] Fits log logistic models to a batch of raw dose-response data.
   * This expects as an argument a **meta.csv** file name, this file is to be found in a directory with all raw data file.
-  * A **batch id** text name - to prefix results files with.
+  * A **prefix** text name - to prefix results files with.
   
 ```{r, eval = FALSE}
 #all meta and raw data stored in ~/batch
-fit_data(file_path = '~/batch/meta-data.csv', 
-         batch_id = 'batch01')
+d <- fit_data(file_path = '~/batch/meta-data.csv', 
+         prefix = 'batch01')
 ```
 `vignette("dose-response-analysis")` gives an expanded introduction to fitting batches of data.
 
-2. `plot_fit()`: Accepts batch log-logistic coefficients and normalised raw data to produce visualisations of dose-response assay data and allow assessment of their fit. 
+## 2. Visualise the fit:
+[plot_fit()] accepts batch log-logistic coefficients and normalised raw data to produce visualisations of dose-response assay data and allow assessment of their fit. 
 
-  * It accepts a data frame of model **results** and a data frame of normalised **data**, both are exported directly from `fit_data()`.
-  * User can include a batch_id for linking visualisation to results in file prefixes.
+  * It accepts a data frame of model **results** and a data frame of normalised **data**, both are exported directly from [fit_data()].
+  * User can include a prefix for linking visualisation to results in file prefixes.
 
 ```{r, eval = FALSE}
-#all meta and raw data stored in ~/batch
-plot_fit(results = df1, 
-         data = df2,
-         batch_id = 'batch01')
+#feed results and data for visualisation
+plot_fit(results = d[1], 
+         data = d[2],
+         prefix = 'batch01')
 ```
 `vignette("visualise-models")` gives an expanded introduction to plotting out results.
+
+## 3. Compare IC~50~ data:
+Typical use case involves testing a mutants mean IC~50~ vs the wild type. Once you have collected repeated IC~50~ estimates, you can merge the results files into one and feed to [compare()]
+    * The function accepts the output results.csv file format of [fit_data()]. 
+    * It will calculate mean, standard deviation for each compound-cell combination.
+    * It will implement a Mann-Whitney U test for significance of unpaired samples 
+    * It will export and return a results csv file of mean IC~50~ values and resulting p values.
+    
+
+```{r, eval = FALSE}
+comp <-  compare(data = d[1], prefix = 'example')
+
+```
+`vignette("compare IC50s")` gives an expanded introduction to significance testing your IC~50~ results.
+
+## 4. Visualise comparisons:
+
+Visualisation has been separated in [plot_mean()] to allow the user to filter comparison results for bar plots of mean IC~50~. 
+
+```{r, eval = FALSE}
+# here a pdf called example_IC50_compare.pdf containing barplot in a 2x2 grid
+p <- plot_mean(data = comp, prefix = 'example', grid.var = 2)
+```
+`vignette("compare-IC50s")` gives an expanded introduction to significance testing your IC~50~ results.
 
 ## Acknowledgements
 

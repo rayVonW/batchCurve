@@ -177,7 +177,35 @@ import_plate <-  function(file, meta) {
 
 
 
+#' Merge multiple csv results or data files.
+#' @param prefix output file prefix.
+#' @param file_list A list of files to merge.
+#'
+#' @return A data frame of merged csv files
+#' @noRd
+merge_csv_files <- function(file_list, prefix = 'group') {
+  # Read each CSV file into a list of data frames
+  data_frames_list <- lapply(file_list, read.csv)
+
+  # Combine all data frames into one
+  merged_data_frame <- do.call(rbind, data_frames_list)
+
+  write.csv(merged_data_frame, paste(prefix,'_merge.csv'), row.names = F)
+  return(merged_data_frame)
+}
 
 
+#' Filter results data frame based on vector of IDs.
+#'
+#' @param dataframe A data frame of results
+#' @param column_name A column you wish to filter by
+#' @param filter_vector List of IDs to filter for
+#'
+#' @return A filtered data frame.
+#' @noRd
+filter_dataframe_by_vector <- function(dataframe, column_name = 'compound', filter_vector) {
+  # Filter the dataframe
+  filtered_df <- subset(dataframe, dataframe[[column_name]] %in% filter_vector)
 
-
+  return(filtered_df)
+}

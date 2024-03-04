@@ -1,0 +1,67 @@
+---
+title: "Compare IC50"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{compare-IC50}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE, 
+  warning = FALSE
+)
+library(magrittr)
+library(flextable)
+```
+
+```{r setup}
+library(batchCurve)
+```
+
+
+
+## Naming format
+
+A typical use case for IC50 comparisons is a collection of IC50 estimates for a mutant cell vs the parent wild type. batchCurve relies on a naming format to determine the mutant-parent identities:
+
+* **parent_gene_variant**
+
+For each compound-mutant combination, the tool will compare to a matching  compound-parent based on the first text components in the ID. For example, highlighted in blue are appropriate parent names that will allow for comparison to <span style="color: blue;">**Dd2**</span>_ProtB5-M45I (red will not):
+
+* <span style="color: blue;">**Dd2**</span>
+* <span style="color: blue;">**Dd2-A**</span>
+* <span style="color: red;">**Dd2_A**</span>
+* <span style="color: red;">**3D7**</span>
+
+
+## Example
+
+batchCurve comes bundled with a number of example dose-response sample files: The example file ("compare_results.csv") contains multiple repeat assays for a number of compound-mutant combinations.
+
+```{r}
+# lists the names of available example data files
+batchCurve_example()
+```
+
+Here we run compare and show a shortened view of the output file.
+```{r}
+# example file contains mutltiple repeat assays for a number of compound-mutant combinations
+d <- utils::read.csv(batchCurve_example(file = "compare_results.csv"))
+cp <- compare(data = d, prefix = 'example')
+
+cp[,c(1:2,4:6,12, 14)] %>% head(3) %>%
+  flextable::flextable() 
+```
+
+The plotting function returns a list of plots as well as a pdf export file.
+
+```{r , message=FALSE, warning=FALSE, fig.width=5, fig.asp= 0.9, dpi= 300, out.width=450, out.height=350, fig.align='center'}
+knitr::opts_chunk$set(dev = 'pdf')
+p <- head(cp, 3) %>% plot_mean(prefix = 'example')
+p[1]
+```
+

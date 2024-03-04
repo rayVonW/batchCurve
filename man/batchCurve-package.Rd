@@ -6,14 +6,16 @@
 \alias{batchCurve-package}
 \title{batchCurve: Provides batch analysis for dose-response modelling}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 A tailored package to analyse raw dose-response data and corresponding meta data.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/rayVonW/gamma}
-  \item \url{https://rayvonw.github.io/gamma/}
-  \item Report bugs at \url{https://github.com/rayVonW/gamma/issues}
+  \item \url{https://github.com/rayVonW/batchCurve}
+  \item \url{https://rayvonw.github.io/batchCurve/}
+  \item Report bugs at \url{https://github.com/rayVonW/batchCurve/issues}
 }
 
 }

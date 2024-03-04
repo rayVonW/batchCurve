@@ -7,11 +7,12 @@
 plot_fit(
   results,
   data,
-  batch_id,
+  prefix,
   plot.var = "compound",
   colour.var = "cell",
   facet.var = NULL,
-  grid.var = 3
+  grid.var = 3,
+  leg.pos = "bottom"
 )
 }
 \arguments{
@@ -19,7 +20,7 @@ plot_fit(
 
 \item{data}{A data frame, from fit_data.}
 
-\item{batch_id}{An character ID for output file prefix.}
+\item{prefix}{An character ID for output file prefix.}
 
 \item{plot.var}{A column name you wish to subset data per plot, default is "compound", you may wish specify "cell".}
 
@@ -28,6 +29,8 @@ plot_fit(
 \item{facet.var}{A column name you wish to differentiate data by facet, default = NULL, you may wish to have "cell" on separate plots.}
 
 \item{grid.var}{a numeric value specifying the grid size in the exported pdf, default = 3 i.e 3x3.}
+
+\item{leg.pos}{Legend position accepts 'right', 'left' top'}
 }
 \value{
 A list of plot objects per plot_var

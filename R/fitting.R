@@ -85,7 +85,7 @@ generate_curve <- function(data){
   keys <- unique(data$IC50_key)
 
   for (k in  keys) {
-    data2 <-  subset(data, .data$IC50_key == k)
+    data2 <-  subset(data, IC50_key == k)
 
 
     # create log drug concentration sequence

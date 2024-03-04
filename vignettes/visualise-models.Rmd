@@ -7,13 +7,96 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  message = FALSE, 
+  warning = FALSE
 )
+library(magrittr)
+library(flextable)
 ```
+
 
 ```{r setup}
 library(batchCurve)
 ```
+
+## Example files
+
+batchCurve comes bundled with a number of example dose-response sample files: 
+
+```{r}
+# lists the names of available example data files
+batchCurve_example()
+```
+
+
+```{r example results, echo = TRUE, results = 'hide'}
+r <- utils::read.csv(batchCurve_example("example1_results.csv"))
+```
+
+The results csv from the fit_data() function will contain all the data in the users meta file with the fitted  <span style="color: blue;">**model coefficients**</span> appended. A randomly generated <span style="color: red;">**key**</span> identifier is attached to each assay to prevent clashes from repeat assays and link normalised data.
+
+
+```{r result table, echo=FALSE}
+
+border <- flextable::fp_border_default()
+
+r[1:5,c(1,7,8,13, 18:20)] %>% 
+  dplyr::filter(!IC50 %in% c('Failed', NA, NULL)) %>%
+  dplyr::mutate(IC50 = as.double(as.character(IC50))) %>%
+  flextable::flextable() %>%
+  flextable::color(j = c(4:7), color = "blue", part = "header") %>%
+  flextable::color(j = c(1), color = "red", part = "header") %>%
+  flextable::vline(j = c('cell'), 
+                   border = border, part = "all") %>% 
+  flextable::bold(j = 1:7, bold = TRUE, part = "header") %>%  
+  flextable::fontsize(size = 10) %>%
+  flextable::align(align = "center") %>%
+  flextable::colformat_double(digits = 4)
+
+  
+```
+
+
+
+```{r example data, echo = TRUE, results = 'hide'}
+d <- utils::read.csv(batchCurve_example("example1_data.csv"))
+```
+
+The data file from the fitting function contains normalised replicate data for each assays dose range. The key value uniquely link each assay results to the data.
+
+```{r data table, echo=FALSE}
+
+border <- flextable::fp_border_default()
+
+d[1:5,] %>% 
+  flextable::flextable() %>%
+  flextable::color(j = c(1), color = "red", part = "header") %>%
+  flextable::bold(j = 1:5, bold = TRUE, part = "header") %>%  
+  flextable::fontsize(size = 10) %>%
+  flextable::align(align = "center") %>%
+  flextable::colformat_double(digits = 4)
+
+  
+```
+
+## Visualise a curve
+
+The [plot_fit()] function allows for batch plotting of each assay. It returns a list object of plots for inspection and exports all plots into a pdf. By default plots are grouped by compound and coloured differently for each cell. In order to easy interpretation IC50 < 0.1 will be converted to nM scale. The index variable in the meta file is used as the subtitle and can therefore be used as needed.
+
+```{r message=FALSE, warning=FALSE, fig.width=4, fig.asp= 0.85, dpi= 300, out.width=450, out.height=350, fig.align='center'}
+
+p <- plot_fit(results = r, data = d, prefix = 'example')
+print(p[3])
+```
+
+## Quality 
+
+The function fits a 4 parameter log-logistic model as this covers 99% of dose-response circumstances. It is up to the user to establish quality based on fit, dose range, signal and replicate variability.
+
+Assays that are deemed unfit can be removed from the results file before replotting if needed (there is no need to filter the data.csv file).
+
+

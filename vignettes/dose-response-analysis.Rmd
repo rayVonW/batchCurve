@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
   warning = FALSE
 )
 library(magrittr)
+library(flextable)
 ```
 
 ```{r setup}
@@ -109,13 +110,13 @@ In addition, the user can supply the function with a text batch_id, this is used
 #use example files
 meta <- batchCurve_example("example_meta.csv")
 
-l <- fit_data(file_path = meta, batch_id = 'example1')
+l <- fit_data(file_path = meta, prefix = 'example1')
 ```
 
 
 This function will provide some console feedback on the analysis progress. Once complete, two objects are exported to csv file and also returned in a list. **note:** The first assay in the example data set is artificial and designed to fail fitting!
 
-1. A **batch_id**_results.csv' file containing the meta data and model coefficient columns appended. This data frame is also returned as the first item in a list for further analysis, here each row still represents 1 assay. A unique identifier (IC50_key) is assigned to avoid clashes between repeat assays and link to the assay data.
+1. A **prefix**_results.csv' file containing the meta data and model coefficient columns appended. This data frame is also returned as the first item in a list for further analysis, here each row still represents 1 assay. A unique identifier (IC50_key) is assigned to avoid clashes between repeat assays and link to the assay data.
 
 ```{r}
 m <- l[[1]]

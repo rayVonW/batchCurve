@@ -3,13 +3,13 @@
 #' iterates over assays for IC50 estimation
 #'
 #' @param file_path A file containing the batches meta data
-#' @param batch_id A unique character value to identify the batch
+#' @param prefix A unique character value to identify the batch
 #'
 #' @return A data frame of LL4 model coefficients for dose-response assays
 #' @export
 
-fit_data <- function(file_path, batch_id) {
-  cli::cli_rule(left = "analysing batch: {batch_id}")
+fit_data <- function(file_path, prefix) {
+  cli::cli_rule(left = "analysing batch: prefix}")
    # read and check [input.R]
    r <- read_csv_file(file_path) %>% validate_meta()
    cli::cli_rule(left = "Assessing raw data files")
@@ -93,11 +93,11 @@ fit_data <- function(file_path, batch_id) {
 
    #export all normalised data to csv file
    data_all %>% utils::write.csv(file = paste0(dirname(file_path),
-                                               '/',batch_id,
+                                               '/',prefix,
                                                "_data.csv"),
                                  row.names = F)
    results_all %>% utils::write.csv(file = paste0(dirname(file_path),
-                                                  '/',batch_id,
+                                                  '/',prefix,
                                                   "_results.csv"),
                                  row.names = F)
 
@@ -114,29 +114,29 @@ fit_data <- function(file_path, batch_id) {
 #'
 #' @param results A data frame, from fit_data.
 #' @param data A data frame, from fit_data.
-#' @param batch_id An character ID for output file prefix.
+#' @param prefix An character ID for output file prefix.
 #' @param plot.var A column name you wish to subset data per plot, default is "compound", you may wish specify "cell".
 #' @param colour.var A column name you wish to differentiate data per plot by colour, default = "cell", you may wish specify "compound".
 #' @param facet.var  A column name you wish to differentiate data by facet, default = NULL, you may wish to have "cell" on separate plots.
 #' @param grid.var a numeric value specifying the grid size in the exported pdf, default = 3 i.e 3x3.
+#' @param leg.pos Legend position accepts 'right', 'left' top'
 #' @return A list of plot objects per plot_var
 #' @export
 
-plot_fit <- function(results, data, batch_id,
+plot_fit <- function(results, data, prefix,
                      plot.var = 'compound',
                      colour.var = 'cell',
                      facet.var = NULL,
-                     grid.var = 3) {
+                     grid.var = 3, leg.pos = 'bottom') {
 
   cli::cli_h2("Generating plots")
-
-  data  <- data.frame(stats::reshape(data = data,
+  results <- data.frame(results)
+  data  <- data.frame(stats::reshape(data = data.frame(data),
                                      direction = "long",
                                      v.names = "value",
                                      varying =  3:5,
                                      idvar = c("key","dose"),
-                                     timevar = "replicate"),
-                      times = names(data)[3:5])
+                                     timevar = "replicate"))
  rownames(data) <- NULL
   n <- results %>%
     dplyr::left_join(data,by = c('IC50_key' = 'key')) %>%
@@ -193,11 +193,12 @@ plot_fit <- function(results, data, batch_id,
                     x = paste0('Drug[',conc,']'),
                     y = "Growth (%)") +
         ggplot2::theme_classic() +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(vjust = -1)))
+        ggplot2::theme(legend.position = leg.pos,
+          axis.text.x = ggplot2::element_text(vjust = -1)))
      j <- j + 1
   }
   #generate and save pdf of all grouped plots
-  group_name <- paste0(batch_id,'_grouped_plots.pdf')
+  group_name <- paste0(prefix,'_grouped_plots.pdf')
 
   suppressWarnings(
     plots <- gridExtra::marrangeGrob(all_grouped_plots,
@@ -211,5 +212,4 @@ plot_fit <- function(results, data, batch_id,
   cli::cli_inform(c("v" = "Export complete"))
   return(all_grouped_plots)
 }
-
 

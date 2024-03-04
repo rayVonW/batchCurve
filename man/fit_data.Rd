@@ -4,12 +4,12 @@
 \alias{fit_data}
 \title{iterates over assays for IC50 estimation}
 \usage{
-fit_data(file_path, batch_id)
+fit_data(file_path, prefix)
 }
 \arguments{
 \item{file_path}{A file containing the batches meta data}
 
-\item{batch_id}{A unique character value to identify the batch}
+\item{prefix}{A unique character value to identify the batch}
 }
 \value{
 A data frame of LL4 model coefficients for dose-response assays
