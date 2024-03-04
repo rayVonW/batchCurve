@@ -4,6 +4,9 @@
     <loc>https://rayvonw.github.io/batchCurve/404.html</loc>
   </url>
   <url>
+    <loc>https://rayvonw.github.io/batchCurve/articles/compare-IC50.html</loc>
+  </url>
+  <url>
     <loc>https://rayvonw.github.io/batchCurve/articles/dose-response-analysis.html</loc>
   </url>
   <url>
@@ -25,6 +28,9 @@
     <loc>https://rayvonw.github.io/batchCurve/reference/batchCurve_example.html</loc>
   </url>
   <url>
+    <loc>https://rayvonw.github.io/batchCurve/reference/compare.html</loc>
+  </url>
+  <url>
     <loc>https://rayvonw.github.io/batchCurve/reference/example_meta.html</loc>
   </url>
   <url>
@@ -35,5 +41,8 @@
   </url>
   <url>
     <loc>https://rayvonw.github.io/batchCurve/reference/plot_fit.html</loc>
+  </url>
+  <url>
+    <loc>https://rayvonw.github.io/batchCurve/reference/plot_mean.html</loc>
   </url>
 </urlset>

@@ -1,10 +1,11 @@
-pandoc: 2.19.2
+pandoc: 3.1.11
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
+  compare-IC50: compare-IC50.html
   dose-response-analysis: dose-response-analysis.html
   visualise-models: visualise-models.html
-last_built: 2024-02-05T17:38Z
+last_built: 2024-03-04T15:22Z
 urls:
   reference: https://rayvonw.github.io/batchCurve/reference
   article: https://rayvonw.github.io/batchCurve/articles
