@@ -1,5 +1,7 @@
 
-# batchCurve <a href="https://rayvonw.github.io/batchCurve/"><img src="man/figures/logo.png" align="right" height="120" alt="batchCurve website" /></a>
+<a href="https://rayvonw.github.io/batchCurve/"><img src="man/figures/logo.png" align="right" height="120" alt="batchCurve website" /></a>
+
+# batchCurve
 
 ## Overview
 
@@ -40,7 +42,7 @@ The overall process of curve fitting and significance testing is
 summarised below, where the user applies quality control at certain
 steps.
 <center>
-<img src="workflow.png" width="550" />
+<img src="./man/figures/workflow.png" width="600" />
 </center>
 
 You can load the package with:
