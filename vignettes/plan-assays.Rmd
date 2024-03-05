@@ -1,0 +1,66 @@
+---
+title: "plan-assays"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plan-assays}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE, 
+  warning = FALSE
+)
+library(magrittr)
+```
+<br>
+<br>
+
+```{r setup}
+library(batchCurve)
+```
+
+## Planning assays
+
+Included in batchCurve are some helper functions for designing dose-response assays in batches from 96 well plates. The tools take specified dose ranges or guide values and arranges compounds in to 384w plates - 8 assays in triplicate (omitting position 5). An example input file is included and shows the required fields:
+
+```{r example_data, echo=TRUE}
+f <- utils::read.csv(batchCurve_example("plan_IC50s.csv"))
+head(f, 8) %>% flextable::flextable() %>%  
+  flextable::color(j = 1:3, color = "red", part = "header") %>%
+   flextable::color(j = 4:6, color = "orange", part = "header") 
+```
+
+
+* In <span style="color: red;">**RED**</span> are required entries
+* In <span style="color: orange;">**ORANGE**</span> are optional
+    - The user can specify range with starting_uM and dilution_factor
+    - If left blank a guide provider IC50 can be used to set range
+    - if completely blank a default 10uM 1in2 dose range is set.
+    
+**The tool expects the plate in order by column (left-to-right), assuming the user will print via 8-channel pipette onto Tecan D300e 8 well casettes.**
+
+The [plan_ranges()] function will specify the starting concentration for each assay based on provided information. It will also adjust the stock concentration to what will be required for the print job. **These are advisory only as user specified concentrations and assay volumes will impact of print viability and DMSO thresholds. It is therefore always recommended to run assays in simulation mode on D300e before diluting stocks**
+
+```{r message=FALSE, warning=FALSE}
+d <- plan_ranges(batchCurve_example("plan_IC50s.csv"))
+head(d, 8) %>% flextable::flextable()
+```
+
+    
+
+The [build_plates()] function will produce and excel spreadsheet which will include:
+
+* A sheet with the ranges specified by [plan_ranges()]
+* One sheet per column of plate with assays laid out for copy-pasting into D300e
+* A meta file describing the plate layout for use with analysis tools downstream.
+
+```{r eval=FALSE, include=TRUE}
+build_plates(data = d, prefix = 'example')
+
+```
+
+

@@ -1,8 +1,8 @@
 ---
-title: "dose response analysis"
+title: "dose-response-analysis"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{"dose response analysis"}
+  %\VignetteIndexEntry{"dose-response-analysis"}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -17,7 +17,8 @@ knitr::opts_chunk$set(
 library(magrittr)
 library(flextable)
 ```
-
+<br>
+<br>
 ```{r setup}
 library(batchCurve)
 ```

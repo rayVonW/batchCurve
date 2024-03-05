@@ -25,7 +25,8 @@ Imports:
     ggplot2,
     gridExtra,
     scales,
-    flextable
+    flextable,
+    openxlsx
 Suggests: 
     knitr,
     rmarkdown

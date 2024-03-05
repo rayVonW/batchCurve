@@ -22,8 +22,7 @@ read_csv_file <- function(file_path) {
 
   df <-  try(utils::read.csv(file = file_path,
                     header = T,
-                    check.names = F)) %>%
-    stats::na.omit()
+                    check.names = F))
 
   return(df)
 }
