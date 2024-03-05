@@ -5,8 +5,11 @@
 
 ## Overview
 
-batchCurve is an analytical workflow for batch analysis of dose-response
-assays. Assay formats must have a 10 point serial dilution as well as a
+batchCurve is an analytical workflow developed for batch analysis of
+dose-response assays carried on blood stage *Plasmodium falciparum*. It
+involves the automated fitting of a four parameter log logistic mode to
+estimate the IC<sub>50</sub> for a compound-cell combination. Assay
+formats are assumed to have a 10 point serial dilution as well as a
 positive and negative growth control. The accepted layouts assume either
 duplicate or triplicate measurement in either 96 or 384 well culture
 plates.
@@ -14,8 +17,9 @@ plates.
 A batch of drug assays can be a combination of 96 and/or 384 well
 plates. It is expected that there will be one raw plate reader csv file
 per assay plate in the analysis folder. Assays that are on the same
-plate must have the same number of replicates. more details of setup can
-be found in `vignette("dose-response-analysis")`.
+plate must have the same number of replicates. More details of the assay
+setup can be found in `vignette("dose-response-analysis")` and
+`vignette("plan-assays")`.
 
 ## Installation
 
