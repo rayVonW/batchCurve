@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="batchCurve">
-<title>dose response analysis • batchCurve</title>
+<title>dose-response-analysis • batchCurve</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -17,7 +17,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dose response analysis">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="dose-response-analysis">
 <meta property="og:description" content="batchCurve">
 <meta property="og:image" content="https://rayvonw.github.io/batchCurve/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -49,7 +49,8 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/compare-IC50.html">Compare IC50</a>
-    <a class="dropdown-item" href="../articles/dose-response-analysis.html">dose response analysis</a>
+    <a class="dropdown-item" href="../articles/dose-response-analysis.html">dose-response-analysis</a>
+    <a class="dropdown-item" href="../articles/plan-assays.html">plan-assays</a>
     <a class="dropdown-item" href="../articles/visualise-models.html">visualise models</a>
   </div>
 </li>
@@ -77,7 +78,7 @@
 <link href="dose-response-analysis_files/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="dose-response-analysis_files/tabwid-1.1.3/tabwid.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>dose response analysis</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>dose-response-analysis</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/rayVonW/batchCurve/blob/HEAD/vignettes/dose-response-analysis.Rmd" class="external-link"><code>vignettes/dose-response-analysis.Rmd</code></a></small>
@@ -86,6 +87,7 @@
 
     
     
+<p><br><br></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rayVonW/batchCurve" class="external-link">batchCurve</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
@@ -107,9 +109,10 @@ sample files:</p>
 <code class="sourceCode R"><span><span class="co"># lists the names of available example data files</span></span>
 <span><span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "compare_results.csv"  "example_meta.csv"     "example1_data.csv"   </span></span>
-<span><span class="co">#&gt;  [4] "example1_results.csv" "TRno0000.CSV"         "TRno0001.CSV"        </span></span>
-<span><span class="co">#&gt;  [7] "TRno0002.CSV"         "TRno0003.CSV"         "TRno3735.CSV"        </span></span>
-<span><span class="co">#&gt; [10] "TRno3965.CSV"         "TRno4849.CSV"         "TRno4850.CSV"</span></span></code></pre></div>
+<span><span class="co">#&gt;  [4] "example1_results.csv" "plan_IC50s.csv"       "TRno0000.CSV"        </span></span>
+<span><span class="co">#&gt;  [7] "TRno0001.CSV"         "TRno0002.CSV"         "TRno0003.CSV"        </span></span>
+<span><span class="co">#&gt; [10] "TRno3735.CSV"         "TRno3965.CSV"         "TRno4849.CSV"        </span></span>
+<span><span class="co">#&gt; [13] "TRno4850.CSV"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="meta-data-requirments">Meta data requirments<a class="anchor" aria-label="anchor" href="#meta-data-requirments"></a>
@@ -135,85 +138,85 @@ information</li>
 <code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"example_meta.csv"</span><span class="op">)</span></span>
 <span><span class="va">f</span></span></code></pre></div>
 <div class="tabwid">
-<style>.cl-0225bc48{}.cl-021e5458{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 165, 0, 1.00);background-color:transparent;}.cl-021e5462{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 0, 0, 1.00);background-color:transparent;}.cl-021e546c{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 255, 1.00);background-color:transparent;}.cl-021e546d{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(160, 32, 240, 1.00);background-color:transparent;}.cl-021e5476{font-family:'DejaVu Sans';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-022120d4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-022120de{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-022120e8{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-02213902{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0221390c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0221390d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213916{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213917{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213918{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213920{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213921{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-02213922{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0221392a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0221392b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0221392c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="table cl-0225bc48">
+<style>.cl-09ad5e6c{}.cl-09a63eca{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 165, 0, 1.00);background-color:transparent;}.cl-09a63ed4{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 0, 0, 1.00);background-color:transparent;}.cl-09a63ede{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 255, 1.00);background-color:transparent;}.cl-09a63edf{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(160, 32, 240, 1.00);background-color:transparent;}.cl-09a63ee0{font-family:'DejaVu Sans';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-09a8fdf4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-09a8fdfe{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-09a8fe08{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-09a914ce{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914d8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914e2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914e3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914e4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914ec{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914ed{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914ee{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914f6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914f7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.75pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a914f8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.75pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-09a91500{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="table cl-09ad5e6c">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-02213902"><p class="cl-022120d4"><span class="cl-021e5458">plate_id</span></p></th>
-<th class="cl-0221390c"><p class="cl-022120d4"><span class="cl-021e5462">position_id</span></p></th>
-<th class="cl-0221390d"><p class="cl-022120d4"><span class="cl-021e5462">format</span></p></th>
-<th class="cl-02213916"><p class="cl-022120de"><span class="cl-021e5462">replicates</span></p></th>
-<th class="cl-0221390c"><p class="cl-022120d4"><span class="cl-021e546c">index</span></p></th>
-<th class="cl-0221390d"><p class="cl-022120d4"><span class="cl-021e546c">compound</span></p></th>
-<th class="cl-02213902"><p class="cl-022120d4"><span class="cl-021e546c">cell</span></p></th>
-<th class="cl-02213917"><p class="cl-022120de"><span class="cl-021e546d">starting_uM</span></p></th>
-<th class="cl-02213918"><p class="cl-022120de"><span class="cl-021e546d">dilution_factor</span></p></th>
+<th class="cl-09a914ce"><p class="cl-09a8fdf4"><span class="cl-09a63eca">plate_id</span></p></th>
+<th class="cl-09a914d8"><p class="cl-09a8fdf4"><span class="cl-09a63ed4">position_id</span></p></th>
+<th class="cl-09a914e2"><p class="cl-09a8fdf4"><span class="cl-09a63ed4">format</span></p></th>
+<th class="cl-09a914e3"><p class="cl-09a8fdfe"><span class="cl-09a63ed4">replicates</span></p></th>
+<th class="cl-09a914d8"><p class="cl-09a8fdf4"><span class="cl-09a63ede">index</span></p></th>
+<th class="cl-09a914e2"><p class="cl-09a8fdf4"><span class="cl-09a63ede">compound</span></p></th>
+<th class="cl-09a914ce"><p class="cl-09a8fdf4"><span class="cl-09a63ede">cell</span></p></th>
+<th class="cl-09a914e4"><p class="cl-09a8fdfe"><span class="cl-09a63edf">starting_uM</span></p></th>
+<th class="cl-09a914ec"><p class="cl-09a8fdfe"><span class="cl-09a63edf">dilution_factor</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">pos_1</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">C01</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">Torin2</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">0.04</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_1</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C01</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Torin2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.04</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">pos_2</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">C01</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">Torin2</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">0.04</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_2</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C01</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Torin2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.04</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">pos_3</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">C01</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">Torin2</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">0.04</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_3</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C01</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Torin2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.04</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">pos_4</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">C02</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">BT-C10</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">0.50</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_4</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C02</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">BT-C10</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.50</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">pos_5</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">C02</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">BT-C10</span></p></td>
-<td class="cl-02213920"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-02213921"><p class="cl-022120e8"><span class="cl-021e5476">0.50</span></p></td>
-<td class="cl-02213922"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_5</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C02</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">BT-C10</span></p></td>
+<td class="cl-09a914ed"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914ee"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.50</span></p></td>
+<td class="cl-09a914f6"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-0221392a"><p class="cl-022120e8"><span class="cl-021e5476">plate_4</span></p></td>
-<td class="cl-0221392b"><p class="cl-022120e8"><span class="cl-021e5476">pos_6</span></p></td>
-<td class="cl-0221392c"><p class="cl-022120e8"><span class="cl-021e5476">384w</span></p></td>
-<td class="cl-0221392a"><p class="cl-022120e8"><span class="cl-021e5476">3</span></p></td>
-<td class="cl-0221392b"><p class="cl-022120e8"><span class="cl-021e5476">C03</span></p></td>
-<td class="cl-0221392c"><p class="cl-022120e8"><span class="cl-021e5476">NITD609</span></p></td>
-<td class="cl-0221392a"><p class="cl-022120e8"><span class="cl-021e5476">Dd2</span></p></td>
-<td class="cl-0221392b"><p class="cl-022120e8"><span class="cl-021e5476">0.04</span></p></td>
-<td class="cl-0221392c"><p class="cl-022120e8"><span class="cl-021e5476">2</span></p></td>
+<td class="cl-09a914f7"><p class="cl-09a8fe08"><span class="cl-09a63ee0">plate_4</span></p></td>
+<td class="cl-09a914f8"><p class="cl-09a8fe08"><span class="cl-09a63ee0">pos_6</span></p></td>
+<td class="cl-09a91500"><p class="cl-09a8fe08"><span class="cl-09a63ee0">384w</span></p></td>
+<td class="cl-09a914f7"><p class="cl-09a8fe08"><span class="cl-09a63ee0">3</span></p></td>
+<td class="cl-09a914f8"><p class="cl-09a8fe08"><span class="cl-09a63ee0">C03</span></p></td>
+<td class="cl-09a91500"><p class="cl-09a8fe08"><span class="cl-09a63ee0">NITD609</span></p></td>
+<td class="cl-09a914f7"><p class="cl-09a8fe08"><span class="cl-09a63ee0">Dd2</span></p></td>
+<td class="cl-09a914f8"><p class="cl-09a8fe08"><span class="cl-09a63ee0">0.04</span></p></td>
+<td class="cl-09a91500"><p class="cl-09a8fe08"><span class="cl-09a63ee0">2</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -305,16 +308,16 @@ clashes between repeat assays and link to the assay data.</li>
 <code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="va">l</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">m</span>, <span class="fl">10</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">8</span>,<span class="fl">13</span>,<span class="fl">20</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt;          IC50_key index cell                 IC50 hill_slope</span></span>
-<span><span class="co">#&gt; 1  cEf6GwDbil1RUQ   C05  Dd2               Failed         NA</span></span>
-<span><span class="co">#&gt; 14 R9XuV4Lfo2D7ZY   C06  Dd2    0.397087567384264   1.673443</span></span>
-<span><span class="co">#&gt; 11 tX2j1v7a8B74BT   C04  Dd2    0.409200699062012   3.917486</span></span>
-<span><span class="co">#&gt; 12 NKEGRpyEOQklwb   C04  3D7    0.609087279032902   4.360740</span></span>
-<span><span class="co">#&gt; 5  5Hl7alBGKSmL9N   C01  Dd2  0.00183920429016226   2.970942</span></span>
-<span><span class="co">#&gt; 2  tkSqkckfsptjoA   C01  Dd2    0.001979863848655   6.139312</span></span>
-<span><span class="co">#&gt; 3  GMH8hNM0C2KZd3   C01  Dd2  0.00199157050920151   5.418731</span></span>
-<span><span class="co">#&gt; 4  wirlT9Ds6Hi8Xn   C02  Dd2   0.0118873520155513   2.471598</span></span>
-<span><span class="co">#&gt; 9  4lGOQAwH2nCwSj   C02  Dd2   0.0120119550447347   2.119453</span></span>
-<span><span class="co">#&gt; 6  NqAHG2TWYiqBX7   C03  Dd2 0.000860595386861181   6.341140</span></span></code></pre></div>
+<span><span class="co">#&gt; 1  dKs78MVXKzOYgF   C05  Dd2               Failed         NA</span></span>
+<span><span class="co">#&gt; 14 xC7UUcLa4evkAF   C06  Dd2    0.397087567384264   1.673443</span></span>
+<span><span class="co">#&gt; 11 iL1UtQTCJ98jaS   C04  Dd2    0.409200699062012   3.917486</span></span>
+<span><span class="co">#&gt; 12 NzIsAVPfY3yaPl   C04  3D7    0.609087279032902   4.360740</span></span>
+<span><span class="co">#&gt; 5  IlZ6DwUzqVFZdZ   C01  Dd2  0.00183920429016226   2.970942</span></span>
+<span><span class="co">#&gt; 2  5r78d4wexMUmbn   C01  Dd2    0.001979863848655   6.139312</span></span>
+<span><span class="co">#&gt; 3  HfWmfz6u3vaY93   C01  Dd2  0.00199157050920151   5.418731</span></span>
+<span><span class="co">#&gt; 4  ns9j84NOmLkbaQ   C02  Dd2   0.0118873520155513   2.471598</span></span>
+<span><span class="co">#&gt; 9  LVqaDMwu4g4A5O   C02  Dd2   0.0120119550447347   2.119453</span></span>
+<span><span class="co">#&gt; 6  WyY8QeeU55HWL7   C03  Dd2 0.000860595386861181   6.341140</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Normalised measurements and dose in uM are exported and the unique
 IC50_key links it back to the assay coefficients data frame.</li>
@@ -323,16 +326,16 @@ IC50_key links it back to the assay coefficients data frame.</li>
 <code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="va">l</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">d</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;               key        dose replicate_1 replicate_2 replicate_3</span></span>
-<span><span class="co">#&gt; 1  cEf6GwDbil1RUQ 10.00000000      100.00       96.41       98.77</span></span>
-<span><span class="co">#&gt; 2  cEf6GwDbil1RUQ  5.00000000      100.00       96.41       98.77</span></span>
-<span><span class="co">#&gt; 3  cEf6GwDbil1RUQ  2.50000000      100.00       96.41       98.77</span></span>
-<span><span class="co">#&gt; 4  cEf6GwDbil1RUQ  1.25000000      100.00       96.41       98.77</span></span>
-<span><span class="co">#&gt; 5  cEf6GwDbil1RUQ  0.62500000        3.15        3.15        3.15</span></span>
-<span><span class="co">#&gt; 6  cEf6GwDbil1RUQ  0.31250000        3.15        3.15        3.15</span></span>
-<span><span class="co">#&gt; 7  cEf6GwDbil1RUQ  0.15625000        3.15        3.15        3.15</span></span>
-<span><span class="co">#&gt; 8  cEf6GwDbil1RUQ  0.07812500       96.41       96.41       96.41</span></span>
-<span><span class="co">#&gt; 9  cEf6GwDbil1RUQ  0.03906250       96.41       96.41       96.41</span></span>
-<span><span class="co">#&gt; 10 cEf6GwDbil1RUQ  0.01953125       96.41       96.41       96.41</span></span></code></pre></div>
+<span><span class="co">#&gt; 1  dKs78MVXKzOYgF 10.00000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 2  dKs78MVXKzOYgF  5.00000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 3  dKs78MVXKzOYgF  2.50000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 4  dKs78MVXKzOYgF  1.25000000      100.00       96.41       98.77</span></span>
+<span><span class="co">#&gt; 5  dKs78MVXKzOYgF  0.62500000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 6  dKs78MVXKzOYgF  0.31250000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 7  dKs78MVXKzOYgF  0.15625000        3.15        3.15        3.15</span></span>
+<span><span class="co">#&gt; 8  dKs78MVXKzOYgF  0.07812500       96.41       96.41       96.41</span></span>
+<span><span class="co">#&gt; 9  dKs78MVXKzOYgF  0.03906250       96.41       96.41       96.41</span></span>
+<span><span class="co">#&gt; 10 dKs78MVXKzOYgF  0.01953125       96.41       96.41       96.41</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="quality-control">Quality Control<a class="anchor" aria-label="anchor" href="#quality-control"></a>
