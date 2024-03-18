@@ -8,9 +8,7 @@
 #' @return A data frame of LL4 model coefficients for dose-response assays
 #' @export
 #' @example
-#' \dontrun{
-#' f <- fit_data(file_path = 'meta.csv', prefix = 'batch01' )
-#' }
+#' \dontrun{f <- fit_data(file_path = 'meta.csv', prefix = 'batch01' )}
 fit_data <- function(file_path, prefix) {
   cli::cli_rule(left = "analysing batch: prefix}")
    # read and check [input.R]

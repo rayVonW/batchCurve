@@ -59,7 +59,7 @@ compare <- function(data, prefix = 'group') {
     ev <- rbind(ev,all) %>% dplyr::arrange(compound)
 
   }
-  utils::write.csv(ev, paste(prefix, '_compare_IC50.csv'), row.names = FALSE)
+  utils::write.csv(ev, paste0(prefix, '_compare_IC50.csv'), row.names = FALSE)
   return(ev)
 }
 
@@ -98,8 +98,12 @@ plot_mean <- function(data, prefix = 'group', grid.var = 2) {
                                                        paste0(x, "\n"))))
 
   #annotation labels
+
   control <- control %>% dplyr::group_by(label) %>%
-    dplyr::mutate(FC_label = paste(label,'\nFC:',FC,'\nn=',n),
+    dplyr::mutate(FC_label = paste0(label,'\n',mean_IC50_uM,
+                                   '\u00B5','M',
+                                   '\nFC:',FC,
+                                   '\nn=',n),
            symb = ifelse(p.value < 0.001, '***',
                          ifelse(p.value < 0.01, '**',
                                 ifelse(p.value < 0.05, '*', " "))))
@@ -132,15 +136,17 @@ plot_mean <- function(data, prefix = 'group', grid.var = 2) {
         csub.b$stdev <- csub.b$stdev * 1000
       }
       csub.b <- csub.b %>%
-        dplyr::mutate(label_p = cumsum(mean_IC50_uM) + stdev)
+        dplyr::mutate(label_p = cumsum(mean_IC50_uM) + stdev,
+                      FC_label_f = factor(FC_label),
+                      name_l = nchar(label))
 
       # scale y max using rsd
       mx <- max(csub.b$mean_IC50_uM) + max(csub.b$stdev)*1.1
       rsd <- stats::sd(csub.b$mean_IC50_uM)/mean(csub.b$mean_IC50_uM)*100
       if (rsd < 100) {mx <- (csub.b$mean_IC50_uM + csub.b$mean_IC50_uM) * 1.5 }
-
+      mx <- max(mx)
       l[[j]] <- csub.b %>%
-        ggplot2::ggplot(ggplot2::aes(x = FC_label, y = mean_IC50_uM)) +
+        ggplot2::ggplot(ggplot2::aes(x = forcats::fct_reorder(FC_label_f, name_l), y = mean_IC50_uM)) +
         ggplot2::geom_bar(stat = "identity", fill = "steelblue") +
         #ggplot2::geom_blank(data = dummy) +
         ggplot2::geom_col(ggplot2::aes(fill = label), position = "dodge") +
