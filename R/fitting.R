@@ -64,7 +64,7 @@ retrieve_results <- function(model, assays, locate){
   assays$hill_slope <- as.numeric(coefs[1])
 
   assays$Zprime <- round(1 - ((3 * (
-    locate$no_drug_sd - locate$blank_sd
+    locate$no_drug_sd + locate$blank_sd
   )) / abs(locate$no_drug - locate$blank)), 2)
 
   return(assays)

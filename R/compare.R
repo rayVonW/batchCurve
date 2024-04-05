@@ -170,19 +170,21 @@ plot_mean <- function(data, prefix = 'group', grid.var = 2) {
 
     }
   }
-
+  sig <- 'p < 0.001 =  ***, p < 0.01 = **, p < 0.05 = *'
   #generate and save pdf of all grouped plots
   group_name <- paste0(prefix,'_IC50_compare.pdf')
 
   suppressWarnings(
     plots <- gridExtra::marrangeGrob(l,
                                      nrow = grid.var,
-                                     ncol = grid.var))
+                                     ncol = grid.var,
+                                     top = prefix,
+                                     bottom = sig ))
   suppressWarnings(
    f <- ggplot2::ggsave(group_name, plots,
                     width = 11, height = 11,
                     units = "in",
-                    dpi = 300))
+                    dpi = 600))
   cli::cli_inform(c("v" = "Export complete"))
   return(l)
 
