@@ -8,6 +8,11 @@
 #' @export
 compare <- function(data, prefix = 'group') {
   l <- unique(data$compound)
+
+  if (colnames(data[13]) == 'IC50')  {
+    names(data)[names(data) == 'IC50'] <- 'IC50_uM'
+  }
+
   ev <- data.frame()
 
   for (i in unique(data$compound)) {

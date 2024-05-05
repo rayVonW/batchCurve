@@ -12,7 +12,7 @@ fit_data(file_path, prefix)
 \item{prefix}{A unique character value to identify the batch}
 }
 \value{
-A data frame of LL4 model coefficients for dose-response assays
+A list of data frames, 1st of LL4 model coefficients for dose-response assays and the 2nd is normalised data (percentage growth).
 }
 \description{
 iterates over assays for IC50 estimation

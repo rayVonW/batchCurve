@@ -16,11 +16,11 @@ plot_fit(
 )
 }
 \arguments{
-\item{results}{A data frame, from fit_data.}
+\item{results}{A data frame of IC5 coefficients, from fit_data.}
 
-\item{data}{A data frame, from fit_data.}
+\item{data}{A data frame of normalised dose response signal, from fit_data.}
 
-\item{prefix}{An character ID for output file prefix.}
+\item{prefix}{A character ID for output file prefix.}
 
 \item{plot.var}{A column name you wish to subset data per plot, default is "compound", you may wish specify "cell".}
 
@@ -33,7 +33,7 @@ plot_fit(
 \item{leg.pos}{Legend position accepts 'right', 'left' top'}
 }
 \value{
-A list of plot objects per plot_var
+A list of plot objects per plot_var and two exported pdf files of plots, grouped by variable and individual assays.
 }
 \description{
 Produces group plots of dose response models from fit_data()

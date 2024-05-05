@@ -79,6 +79,7 @@ retrieve_results <- function(model, assays, locate){
 generate_curve <- function(data){
   #filter out NA where n = 2 or failed fit
   data <- data[stats::complete.cases(data),]
+
   data$IC50 <- as.numeric(as.character(data$IC50))
 
   curves <- data.frame()
