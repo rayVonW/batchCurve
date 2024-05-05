@@ -249,7 +249,7 @@ plot_fit <- function(results, data, prefix,
                grid.var = 3, leg.pos = 'bottom')
 
   cli::cli_inform(c("v" = "Export complete"))
-  return(ap)
+  return(all_grouped_plots)
 }
 
 
