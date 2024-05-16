@@ -45,7 +45,7 @@ library(batchCurve)
 
 There are four main functions to use:
 
-## 2. Plan assays to specification format 
+## 1. Plan assays to specification format 
 [plan_ranges()] and [build_plates()] will take a csv file of compound IDs in a 96 well layout and produce a excel workbook of suggested dose-response ranges in triplicate 384w layout for copy pasting into the Tecan D300e digital printer. 
 
 * The input csv can provide a 'guide/provider' IC50 to set the range, user specified range or, if left blank will default to a starting concentration of 10$\mu M$ with a 10-point 1:2 serial dilution in triplicate.
