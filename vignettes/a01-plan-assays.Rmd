@@ -2,7 +2,7 @@
 title: "Step 1: Plan assays"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{a01-Plan-assays}
+  %\VignetteIndexEntry{Step 1: Plan assays}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -18,8 +18,8 @@ A batch of drug assays can be a combination of 96 and/or 384 well
 plates. It is expected that there will be one raw plate reader csv file
 per assay plate in the analysis folder. Assays that are on the same
 plate must have the same number of replicates. More details of the assay
-setup can be found in `vignette("dose-response-analysis")` and
-`vignette("plan-assays")`.
+setup can be found in vignette(“a02-dose-response-analysis”, package =
+“batchCurve”) and `vignette("plan-assays")`.
 
 ## Installation
 

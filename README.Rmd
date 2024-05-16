@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 batchCurve is an analytical workflow developed for batch analysis of dose-response assays carried on blood stage _Plasmodium falciparum_. It involves the automated fitting of a four parameter log logistic mode to estimate the IC~50~ for a compound-cell combination. Assay formats are assumed to have a 10 point serial dilution as well as a positive and negative growth control. The accepted layouts assume either duplicate or triplicate measurement in either 96 or 384 well culture plates.
 
-A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in `vignette("dose-response-analysis")` and `vignette("plan-assays")`.
+A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in a step-by-step guide in articles drop down menu.
 
 ## Installation
 
@@ -45,20 +45,35 @@ library(batchCurve)
 
 There are four main functions to use:
 
-## 1. Fit model to data: 
+## 2. Plan assays to specification format 
+[plan_ranges()] and [build_plates()] will take a csv file of compound IDs in a 96 well layout and produce a excel workbook of suggested dose-response ranges in triplicate 384w layout for copy pasting into the Tecan D300e digital printer. 
+
+* The input csv can provide a 'guide/provider' IC50 to set the range, user specified range or, if left blank will default to a starting concentration of 10$\mu M$ with a 10-point 1:2 serial dilution in triplicate.
+
+* A **prefix** text name - to prefix the exported 'print_plan.xlsx' file.
+  
+```{r, eval = FALSE}
+#all meta and raw data stored in ~/batch
+plan <- plan_ranges(batchCurve_example("plan_IC50s.csv"))
+#inspect the suggested ranges before exporting plate layouts.
+build_plates(data = plan, prefix = 'example')
+```
+`vignette("a01-plan-assays")` gives a more detailed introduction to planning.
+
+## 2. Fit model to data: 
 [fit_data()] will attempt to fit a four parameter log logistic model to a batch of raw dose-response data.
 
 * This expects as an argument a **meta.csv** file name, this file is to be found in a directory with all raw data file.
-* A **prefix** text name - to prefix results files with.
+* A **prefix** text name - to prefix exported result files with, i.e. 'results.csv' and 'data.csv'.
   
 ```{r, eval = FALSE}
 #all meta and raw data stored in ~/batch
 d <- fit_data(file_path = '~/batch/meta-data.csv', 
          prefix = 'batch01')
 ```
-`vignette("dose-response-analysis")` gives an expanded introduction to fitting batches of data.
+`vignette("a02-dose-response-analysis")` gives an expanded introduction to fitting batches of data.
 
-## 2. Visualise the fit:
+## 3. Visualise the fit:
 [plot_fit()] accepts batch log-logistic coefficients and normalised raw data to produce visualisations of dose-response assay data and allow assessment of their fit. 
 
   * It accepts a data frame of model **results** and a data frame of normalised **data**, both are exported directly from [fit_data()].
@@ -70,9 +85,9 @@ plot_fit(results = d[1],
          data = d[2],
          prefix = 'batch01')
 ```
-`vignette("visualise-models")` gives an expanded introduction to plotting out results.
+`vignette("a03-visualise-models")` gives an expanded introduction to plotting out results.
 
-## 3. Compare IC~50~ data:
+## 4. Compare IC~50~ data:
 Typical use case involves testing a mutants mean IC~50~ vs the wild type. Once you have collected repeated IC~50~ estimates, you can merge the results files into one and feed to [compare()]
     * The function accepts the output results.csv file format of [fit_data()]. 
     * It will calculate mean, standard deviation for each compound-cell combination.
@@ -84,9 +99,9 @@ Typical use case involves testing a mutants mean IC~50~ vs the wild type. Once y
 comp <-  compare(data = d[1], prefix = 'example')
 
 ```
-`vignette("compare IC50s")` gives an expanded introduction to significance testing your IC~50~ results.
+`vignette("a04-compare-IC50")` gives an expanded introduction to significance testing your IC~50~ results.
 
-## 4. Visualise comparisons:
+## 5. Visualise comparisons:
 
 Visualisation has been separated in [plot_mean()] to allow the user to filter comparison results for bar plots of mean IC~50~. 
 
@@ -94,7 +109,7 @@ Visualisation has been separated in [plot_mean()] to allow the user to filter co
 # here a pdf called example_IC50_compare.pdf containing barplot in a 2x2 grid
 p <- plot_mean(data = comp, prefix = 'example', grid.var = 2)
 ```
-`vignette("compare-IC50s")` gives an expanded introduction to significance testing your IC~50~ results.
+`vignette("a04-compare-IC50")` gives an expanded introduction to significance testing your IC~50~ results.
 
 ## Acknowledgements
 
