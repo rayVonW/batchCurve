@@ -6,7 +6,7 @@ articles:
   a02-dose-response-analysis: a02-dose-response-analysis.html
   a03-visualise-models: a03-visualise-models.html
   a04-compare-IC50: a04-compare-IC50.html
-last_built: 2024-05-16T12:03Z
+last_built: 2024-05-16T12:13Z
 urls:
   reference: https://rayvonw.github.io/batchCurve/reference
   article: https://rayvonw.github.io/batchCurve/articles
