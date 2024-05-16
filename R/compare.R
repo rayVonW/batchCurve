@@ -33,7 +33,7 @@ compare <- function(data, prefix = 'group') {
       dsubc$group <- factor(dsubc$cell)
 
       #Wilcoxon rank sum test (equivalent to the Mann-Whitney test)
-      r <- stats::wilcox.test(dsubc$IC50_uM~dsubc$group, paired = FALSE)
+      r <- stats::wilcox.test(dsubc$IC50_uM~dsubc$group)
 
       s <- dsubc %>%
         dplyr::group_by(.data$cell) %>%
