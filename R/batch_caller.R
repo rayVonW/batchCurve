@@ -342,7 +342,7 @@ ind_plot_fit <- function(results, data, prefix,
         MinR <- 0
       }
 
-      IC50 <- round(IC50, 4)
+      IC50 <- round(IC50, 3)
 
 
       if ( IC50 > MaxD | MinR > 45) {
