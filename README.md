@@ -18,8 +18,7 @@ A batch of drug assays can be a combination of 96 and/or 384 well
 plates. It is expected that there will be one raw plate reader csv file
 per assay plate in the analysis folder. Assays that are on the same
 plate must have the same number of replicates. More details of the assay
-setup can be found in vignette(“a02-dose-response-analysis”, package =
-“batchCurve”) and `vignette("plan-assays")`.
+setup can be found in a step-by-step guide in articles drop down menu.
 
 ## Installation
 
@@ -53,14 +52,40 @@ library(batchCurve)
 
 There are four main functions to use:
 
-## 1. Fit model to data:
+## 1. Plan assays to specification format
+
+\[plan_ranges()\] and \[build_plates()\] will take a csv file of
+compound IDs in a 96 well layout and produce a excel workbook of
+suggested dose-response ranges in triplicate 384w layout for copy
+pasting into the Tecan D300e digital printer.
+
+- The input csv can provide a ‘guide/provider’ IC50 to set the range,
+  user specified range or, if left blank will default to a starting
+  concentration of 10$\mu M$ with a 10-point 1:2 serial dilution in
+  triplicate.
+
+- A **prefix** text name - to prefix the exported ‘print_plan.xlsx’
+  file.
+
+``` r
+#all meta and raw data stored in ~/batch
+plan <- plan_ranges(batchCurve_example("plan_IC50s.csv"))
+#inspect the suggested ranges before exporting plate layouts.
+build_plates(data = plan, prefix = 'example')
+```
+
+`vignette("a01-plan-assays")` gives a more detailed introduction to
+planning.
+
+## 2. Fit model to data:
 
 \[fit_data()\] will attempt to fit a four parameter log logistic model
 to a batch of raw dose-response data.
 
 - This expects as an argument a **meta.csv** file name, this file is to
   be found in a directory with all raw data file.
-- A **prefix** text name - to prefix results files with.
+- A **prefix** text name - to prefix exported result files with,
+  i.e. ‘results.csv’ and ‘data.csv’.
 
 ``` r
 #all meta and raw data stored in ~/batch
@@ -68,10 +93,10 @@ d <- fit_data(file_path = '~/batch/meta-data.csv',
          prefix = 'batch01')
 ```
 
-`vignette("dose-response-analysis")` gives an expanded introduction to
-fitting batches of data.
+`vignette("a02-dose-response-analysis")` gives an expanded introduction
+to fitting batches of data.
 
-## 2. Visualise the fit:
+## 3. Visualise the fit:
 
 \[plot_fit()\] accepts batch log-logistic coefficients and normalised
 raw data to produce visualisations of dose-response assay data and allow
@@ -89,10 +114,10 @@ plot_fit(results = d[1],
          prefix = 'batch01')
 ```
 
-`vignette("visualise-models")` gives an expanded introduction to
+`vignette("a03-visualise-models")` gives an expanded introduction to
 plotting out results.
 
-## 3. Compare IC<sub>50</sub> data:
+## 4. Compare IC<sub>50</sub> data:
 
 Typical use case involves testing a mutants mean IC<sub>50</sub> vs the
 wild type. Once you have collected repeated IC<sub>50</sub> estimates,
@@ -107,10 +132,10 @@ results csv file of mean IC<sub>50</sub> values and resulting p values.
 comp <-  compare(data = d[1], prefix = 'example')
 ```
 
-`vignette("compare IC50s")` gives an expanded introduction to
+`vignette("a04-compare-IC50")` gives an expanded introduction to
 significance testing your IC<sub>50</sub> results.
 
-## 4. Visualise comparisons:
+## 5. Visualise comparisons:
 
 Visualisation has been separated in \[plot_mean()\] to allow the user to
 filter comparison results for bar plots of mean IC<sub>50</sub>.
@@ -120,7 +145,7 @@ filter comparison results for bar plots of mean IC<sub>50</sub>.
 p <- plot_mean(data = comp, prefix = 'example', grid.var = 2)
 ```
 
-`vignette("compare-IC50s")` gives an expanded introduction to
+`vignette("a04-compare-IC50")` gives an expanded introduction to
 significance testing your IC<sub>50</sub> results.
 
 ## Acknowledgements
