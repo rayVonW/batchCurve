@@ -146,6 +146,7 @@ plot_fit <- function(results, data, prefix,
   if(length(colnames(data)) > 4) {
     data  <- data.frame(stats::reshape(data = data.frame(data),
                                        direction = "long",
+                                       idvar = 1:2,
                                        v.names = "value",
                                        varying =  3:5,
                                        timevar = "replicate"))
