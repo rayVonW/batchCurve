@@ -284,6 +284,7 @@ ind_plot_fit <- function(results, data, prefix,
   if (length(colnames(data)) > 4) {
     data  <- data.frame(stats::reshape(data = data.frame(data),
                                        direction = "long",
+                                       idvar = 1:2,
                                        v.names = "value",
                                        varying =  3:5,
                                        timevar = "replicate"))
@@ -317,7 +318,10 @@ ind_plot_fit <- function(results, data, prefix,
       suppressWarnings(MinD <- min(sub.n2$dose))
 
       conc <- 'uM'
-      IC50 <- as.numeric(as.character(unique(sub.n2$IC50)))
+      suppressWarnings(IC50 <- as.numeric(as.character(unique(sub.n2$IC50))))
+      if(is.na(IC50)){
+        IC50 <- 0
+      }
 
       if (MaxD <= 1) {
         sub.c2$dose <- sub.c2$dose*1000
@@ -330,12 +334,16 @@ ind_plot_fit <- function(results, data, prefix,
       colour.var <- rlang::sym(colour.var)
 
 
-      MaxR <- max(sub.n2$value)
-      MinR <- min(sub.n2$value)
+      suppressWarnings(MaxR <- max(sub.n2$value))
+      suppressWarnings(MinR <- min(sub.n2$value))
+      if(is.na(MinR)){
+        MinR <- 0
+      }
+
+      IC50 <- round(IC50, 4)
 
 
-      IC50 <- round(IC50, 3)
-      if (IC50  > MaxD | MinR > 45) {
+      if ( IC50 > MaxD | MinR > 45) {
         label <- paste0("IC50\n",'>',as.character(MaxD), conc)
       }else{
         label <- paste0("IC50\n",as.character(IC50), conc)
