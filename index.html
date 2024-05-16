@@ -83,7 +83,7 @@
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>batchCurve is an analytical workflow developed for batch analysis of dose-response assays carried on blood stage <em>Plasmodium falciparum</em>. It involves the automated fitting of a four parameter log logistic mode to estimate the IC<sub>50</sub> for a compound-cell combination. Assay formats are assumed to have a 10 point serial dilution as well as a positive and negative growth control. The accepted layouts assume either duplicate or triplicate measurement in either 96 or 384 well culture plates.</p>
-<p>A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in vignette(“a02-dose-response-analysis”, package = “batchCurve”) and <code>vignette("plan-assays")</code>.</p>
+<p>A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in a step-by-step guide in articles drop down menu.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -110,50 +110,65 @@ The overall process of curve fitting and significance testing is summarised belo
 <p>There are four main functions to use:</p>
 </div>
 <div class="section level2">
-<h2 id="id_1-fit-model-to-data">1. Fit model to data:<a class="anchor" aria-label="anchor" href="#id_1-fit-model-to-data"></a>
+<h2 id="id_1-plan-assays-to-specification-format">1. Plan assays to specification format<a class="anchor" aria-label="anchor" href="#id_1-plan-assays-to-specification-format"></a>
+</h2>
+<p>[plan_ranges()] and [build_plates()] will take a csv file of compound IDs in a 96 well layout and produce a excel workbook of suggested dose-response ranges in triplicate 384w layout for copy pasting into the Tecan D300e digital printer.</p>
+<ul>
+<li><p>The input csv can provide a ‘guide/provider’ IC50 to set the range, user specified range or, if left blank will default to a starting concentration of 10<span class="math inline"><em>μ</em><em>M</em></span> with a 10-point 1:2 serial dilution in triplicate.</p></li>
+<li><p>A <strong>prefix</strong> text name - to prefix the exported ‘print_plan.xlsx’ file.</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#all meta and raw data stored in ~/batch</span></span>
+<span><span class="va">plan</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plan_ranges.html">plan_ranges</a></span><span class="op">(</span><span class="fu"><a href="reference/batchCurve_example.html">batchCurve_example</a></span><span class="op">(</span><span class="st">"plan_IC50s.csv"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#inspect the suggested ranges before exporting plate layouts.</span></span>
+<span><span class="fu"><a href="reference/build_plates.html">build_plates</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">plan</span>, prefix <span class="op">=</span> <span class="st">'example'</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="articles/a01-plan-assays.html">vignette("a01-plan-assays")</a></code> gives a more detailed introduction to planning.</p>
+</div>
+<div class="section level2">
+<h2 id="id_2-fit-model-to-data">2. Fit model to data:<a class="anchor" aria-label="anchor" href="#id_2-fit-model-to-data"></a>
 </h2>
 <p>[fit_data()] will attempt to fit a four parameter log logistic model to a batch of raw dose-response data.</p>
 <ul>
 <li>This expects as an argument a <strong>meta.csv</strong> file name, this file is to be found in a directory with all raw data file.</li>
-<li>A <strong>prefix</strong> text name - to prefix results files with.</li>
+<li>A <strong>prefix</strong> text name - to prefix exported result files with, i.e. ‘results.csv’ and ‘data.csv’.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#all meta and raw data stored in ~/batch</span></span>
 <span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fit_data.html">fit_data</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="st">'~/batch/meta-data.csv'</span>, </span>
 <span>         prefix <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
-<p><code>vignette("dose-response-analysis")</code> gives an expanded introduction to fitting batches of data.</p>
+<p><code><a href="articles/a02-dose-response-analysis.html">vignette("a02-dose-response-analysis")</a></code> gives an expanded introduction to fitting batches of data.</p>
 </div>
 <div class="section level2">
-<h2 id="id_2-visualise-the-fit">2. Visualise the fit:<a class="anchor" aria-label="anchor" href="#id_2-visualise-the-fit"></a>
+<h2 id="id_3-visualise-the-fit">3. Visualise the fit:<a class="anchor" aria-label="anchor" href="#id_3-visualise-the-fit"></a>
 </h2>
 <p>[plot_fit()] accepts batch log-logistic coefficients and normalised raw data to produce visualisations of dose-response assay data and allow assessment of their fit.</p>
 <ul>
 <li>It accepts a data frame of model <strong>results</strong> and a data frame of normalised <strong>data</strong>, both are exported directly from [fit_data()].</li>
 <li>User can include a prefix for linking visualisation to results in file prefixes.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#feed results and data for visualisation</span></span>
 <span><span class="fu"><a href="reference/plot_fit.html">plot_fit</a></span><span class="op">(</span>results <span class="op">=</span> <span class="va">d</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, </span>
 <span>         data <span class="op">=</span> <span class="va">d</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,</span>
 <span>         prefix <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
-<p><code>vignette("visualise-models")</code> gives an expanded introduction to plotting out results.</p>
+<p><code><a href="articles/a03-visualise-models.html">vignette("a03-visualise-models")</a></code> gives an expanded introduction to plotting out results.</p>
 </div>
 <div class="section level2">
-<h2 id="id_3-compare-ic50-data">3. Compare IC<sub>50</sub> data:<a class="anchor" aria-label="anchor" href="#id_3-compare-ic50-data"></a>
+<h2 id="id_4-compare-ic50-data">4. Compare IC<sub>50</sub> data:<a class="anchor" aria-label="anchor" href="#id_4-compare-ic50-data"></a>
 </h2>
 <p>Typical use case involves testing a mutants mean IC<sub>50</sub> vs the wild type. Once you have collected repeated IC<sub>50</sub> estimates, you can merge the results files into one and feed to [compare()] * The function accepts the output results.csv file format of [fit_data()]. * It will calculate mean, standard deviation for each compound-cell combination. * It will implement a Mann-Whitney U test for significance of unpaired samples * It will export and return a results csv file of mean IC<sub>50</sub> values and resulting p values.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">comp</span> <span class="op">&lt;-</span>  <span class="fu"><a href="reference/compare.html">compare</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">d</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, prefix <span class="op">=</span> <span class="st">'example'</span><span class="op">)</span></span></code></pre></div>
-<p><code>vignette("compare IC50s")</code> gives an expanded introduction to significance testing your IC<sub>50</sub> results.</p>
+<p><code><a href="articles/a04-compare-IC50.html">vignette("a04-compare-IC50")</a></code> gives an expanded introduction to significance testing your IC<sub>50</sub> results.</p>
 </div>
 <div class="section level2">
-<h2 id="id_4-visualise-comparisons">4. Visualise comparisons:<a class="anchor" aria-label="anchor" href="#id_4-visualise-comparisons"></a>
+<h2 id="id_5-visualise-comparisons">5. Visualise comparisons:<a class="anchor" aria-label="anchor" href="#id_5-visualise-comparisons"></a>
 </h2>
 <p>Visualisation has been separated in [plot_mean()] to allow the user to filter comparison results for bar plots of mean IC<sub>50</sub>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># here a pdf called example_IC50_compare.pdf containing barplot in a 2x2 grid</span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plot_mean.html">plot_mean</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">comp</span>, prefix <span class="op">=</span> <span class="st">'example'</span>, grid.var <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<p><code>vignette("compare-IC50s")</code> gives an expanded introduction to significance testing your IC<sub>50</sub> results.</p>
+<p><code><a href="articles/a04-compare-IC50.html">vignette("a04-compare-IC50")</a></code> gives an expanded introduction to significance testing your IC<sub>50</sub> results.</p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
