@@ -41,7 +41,7 @@ head(f, 8) %>% flextable::flextable() %>%
     - If left blank a guide provider IC50 can be used to set range
     - if completely blank a default 10uM 1in2 dose range is set.
     
-**The tool expects the plate in order by column (left-to-right), assuming the user will print via 8-channel pipette onto Tecan D300e 8 well casettes.**
+**The tool expects the plate in order by column (left-to-right), assuming the user will print via 8-channel pipette onto Tecan D300e 8 well cassettes.**
 
 The [plan_ranges()] function will specify the starting concentration for each assay based on provided information. It will also adjust the stock concentration to what will be required for the print job. **These are advisory only as user specified concentrations and assay volumes will impact of print viability and DMSO thresholds. It is therefore always recommended to run assays in simulation mode on D300e before diluting stocks**
 
@@ -56,7 +56,7 @@ The [build_plates()] function will produce and excel spreadsheet which will incl
 
 * A sheet with the ranges specified by [plan_ranges()]
 * One sheet per column of plate with assays laid out for copy-pasting into D300e
-* A meta file describing the plate layout for use with analysis tools downstream.
+* A meta file describing the plate layout for use with analysis tools downstream.Cell ID's and any duplicate plates are to be completed by the user.
 
 ```{r eval=FALSE, include=TRUE}
 build_plates(data = d, prefix = 'example')
@@ -64,3 +64,4 @@ build_plates(data = d, prefix = 'example')
 ```
 
 
+Following printing and cell dropping, our in house protocol specifies cell lysis and SYBR staining after 72hr of incubation, the plates are later read on an Omega Fluostar plate reader. Each plate has its 'plate_id' tag recorded in ID1 position of the Fluostar software, it is then exported with the raw data as an ASCII csv file with a 'TRno' prefix (one file per plate). The raw files are placed in a folder with the associated meta file for fitting (see step 2: `vignette("a02-dose-response-analysis")`)

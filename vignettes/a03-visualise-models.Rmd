@@ -93,6 +93,8 @@ p <- plot_fit(results = r, data = d, prefix = 'example')
 print(p[3])
 ```
 
+Two pdf files are exported, one grouped by compound and the other is one plot per assay.
+
 ## Quality 
 
 The function fits a 4 parameter log-logistic model as this covers 99% of dose-response circumstances. It is up to the user to establish quality based on fit, dose range, signal and replicate variability.

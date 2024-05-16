@@ -138,4 +138,4 @@ The standard Hill model enables generating sigmoidal curves that capture dose-re
 
 A separate function for plotting the data and models is included in batchCurve, `plot_fit()`. This functionality is separated from the model fitting procedure to allow the user the option to re-plot the results after some manipulation, i.e you want to filter some failed assays out or merge multiple batches together.
 
-See `vignette("visualise models")` for a walk through of this procedure.
+See `vignette("a03-visualise-models")` for a walk through of this procedure.
