@@ -50,7 +50,7 @@ You can load the package with:
 library(batchCurve)
 ```
 
-There are four main functions to use:
+There are five main steps in the workflow:
 
 ## 1. Plan assays to specification format
 
