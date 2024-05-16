@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">batchCurve</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,10 +48,10 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/compare-IC50.html">Compare IC50</a>
-    <a class="dropdown-item" href="articles/dose-response-analysis.html">dose-response-analysis</a>
-    <a class="dropdown-item" href="articles/plan-assays.html">plan-assays</a>
-    <a class="dropdown-item" href="articles/visualise-models.html">visualise models</a>
+    <a class="dropdown-item" href="articles/a01-plan-assays.html">Step 1: Plan assays</a>
+    <a class="dropdown-item" href="articles/a02-dose-response-analysis.html">Step 2: Dose-Response analysis</a>
+    <a class="dropdown-item" href="articles/a03-visualise-models.html">Step 3: Visualise models</a>
+    <a class="dropdown-item" href="articles/a04-compare-IC50.html">Step 4 : Compare IC50</a>
   </div>
 </li>
       </ul>
@@ -83,7 +83,7 @@
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
 <p>batchCurve is an analytical workflow developed for batch analysis of dose-response assays carried on blood stage <em>Plasmodium falciparum</em>. It involves the automated fitting of a four parameter log logistic mode to estimate the IC<sub>50</sub> for a compound-cell combination. Assay formats are assumed to have a 10 point serial dilution as well as a positive and negative growth control. The accepted layouts assume either duplicate or triplicate measurement in either 96 or 384 well culture plates.</p>
-<p>A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in <code><a href="articles/dose-response-analysis.html">vignette("dose-response-analysis")</a></code> and <code><a href="articles/plan-assays.html">vignette("plan-assays")</a></code>.</p>
+<p>A batch of drug assays can be a combination of 96 and/or 384 well plates. It is expected that there will be one raw plate reader csv file per assay plate in the analysis folder. Assays that are on the same plate must have the same number of replicates. More details of the assay setup can be found in <code>vignette("dose-response-analysis")</code> and <code>vignette("plan-assays")</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -121,7 +121,7 @@ The overall process of curve fitting and significance testing is summarised belo
 <code class="sourceCode R"><span><span class="co">#all meta and raw data stored in ~/batch</span></span>
 <span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fit_data.html">fit_data</a></span><span class="op">(</span>file_path <span class="op">=</span> <span class="st">'~/batch/meta-data.csv'</span>, </span>
 <span>         prefix <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
-<p><code><a href="articles/dose-response-analysis.html">vignette("dose-response-analysis")</a></code> gives an expanded introduction to fitting batches of data.</p>
+<p><code>vignette("dose-response-analysis")</code> gives an expanded introduction to fitting batches of data.</p>
 </div>
 <div class="section level2">
 <h2 id="id_2-visualise-the-fit">2. Visualise the fit:<a class="anchor" aria-label="anchor" href="#id_2-visualise-the-fit"></a>
@@ -136,7 +136,7 @@ The overall process of curve fitting and significance testing is summarised belo
 <span><span class="fu"><a href="reference/plot_fit.html">plot_fit</a></span><span class="op">(</span>results <span class="op">=</span> <span class="va">d</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, </span>
 <span>         data <span class="op">=</span> <span class="va">d</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,</span>
 <span>         prefix <span class="op">=</span> <span class="st">'batch01'</span><span class="op">)</span></span></code></pre></div>
-<p><code><a href="articles/visualise-models.html">vignette("visualise-models")</a></code> gives an expanded introduction to plotting out results.</p>
+<p><code>vignette("visualise-models")</code> gives an expanded introduction to plotting out results.</p>
 </div>
 <div class="section level2">
 <h2 id="id_3-compare-ic50-data">3. Compare IC<sub>50</sub> data:<a class="anchor" aria-label="anchor" href="#id_3-compare-ic50-data"></a>
