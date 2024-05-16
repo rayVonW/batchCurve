@@ -27,9 +27,7 @@ Imports:
     scales,
     flextable,
     openxlsx,
-    forcats,
-    DBI,
-    RSQLite
+    forcats
 Suggests: 
     knitr,
     rmarkdown

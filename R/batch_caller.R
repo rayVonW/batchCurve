@@ -245,8 +245,7 @@ plot_fit <- function(results, data, prefix,
   ap <- ind_plot_fit(results, data, prefix,
                plot.var = 'compound',
                colour.var = 'cell',
-               facet.var = NULL,
-               grid.var = 3, leg.pos = 'bottom')
+               grid.var = 3)
 
   cli::cli_inform(c("v" = "Export complete"))
   return(all_grouped_plots)
