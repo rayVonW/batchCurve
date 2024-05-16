@@ -1,11 +1,13 @@
 
 
-#' iterates over assays for IC50 estimation
+#' Fit an LL.4 model to dose response data in batches.
 #'
-#' @param file_path A file containing the batches meta data
-#' @param prefix A unique character value to identify the batch
+#' 'fit_data()' is tailored for 384 well SYBR Green dose response assays in Plasmodium.
 #'
-#' @return A list of data frames, 1st of LL4 model coefficients for dose-response assays and the 2nd is normalised data (percentage growth).
+#' @param file_path A file containing the batches meta data.
+#' @param prefix A batch identifier for output files, i.e 'batch01'
+#'
+#' @return A list of data frames, 1st of LL4 model coefficients for dose-response assays and the 2nd is normalised data (percentage growth). The dataframes will also be exported i.e 'batch01_results.csv' and 'batch01_data.csv'.
 #' @export
 #' @example
 #' \dontrun{f <- fit_data(file_path = 'meta.csv', prefix = 'batch01' )}

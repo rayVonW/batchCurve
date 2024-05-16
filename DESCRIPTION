@@ -1,7 +1,7 @@
 Package: batchCurve
 Type: Package
 Title: Provides batch analysis for dose-response modelling
-Version: 0.1.0
+Version: 1.0.0
 Author: Ray Coyle
 Maintainer: Ray Coyle <ray.coyle88@gmail.com>
 Description: A tailored package to analyse raw dose-response data and corresponding meta data.

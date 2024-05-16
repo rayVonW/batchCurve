@@ -1,8 +1,8 @@
 ---
-title: "Compare IC50"
+title: "Step 4 : Compare IC50"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{compare-IC50}
+  %\VignetteIndexEntry{a04-compare-IC50}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

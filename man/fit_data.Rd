@@ -2,18 +2,18 @@
 % Please edit documentation in R/batch_caller.R
 \name{fit_data}
 \alias{fit_data}
-\title{iterates over assays for IC50 estimation}
+\title{Fit an LL.4 model to dose response data in batches.}
 \usage{
 fit_data(file_path, prefix)
 }
 \arguments{
-\item{file_path}{A file containing the batches meta data}
+\item{file_path}{A file containing the batches meta data.}
 
-\item{prefix}{A unique character value to identify the batch}
+\item{prefix}{A batch identifier for output files, i.e 'batch01'}
 }
 \value{
-A list of data frames, 1st of LL4 model coefficients for dose-response assays and the 2nd is normalised data (percentage growth).
+A list of data frames, 1st of LL4 model coefficients for dose-response assays and the 2nd is normalised data (percentage growth). The dataframes will also be exported i.e 'batch01_results.csv' and 'batch01_data.csv'.
 }
 \description{
-iterates over assays for IC50 estimation
+'fit_data()' is tailored for 384 well SYBR Green dose response assays in Plasmodium.
 }

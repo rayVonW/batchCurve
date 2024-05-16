@@ -1,8 +1,8 @@
 ---
-title: "dose-response-analysis"
+title: "Step 2: Dose-Response analysis"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{"dose-response-analysis"}
+  %\VignetteIndexEntry{"a02-dose-response-analysis"}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

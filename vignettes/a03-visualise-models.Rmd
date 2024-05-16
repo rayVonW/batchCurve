@@ -1,8 +1,8 @@
 ---
-title: "visualise models"
+title: "Step 3: Visualise models"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{visualise models}
+  %\VignetteIndexEntry{a03-visualise-models}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
